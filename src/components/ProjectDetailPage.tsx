@@ -234,8 +234,8 @@ const ProjectDetailPage: React.FC = () => {
     <>
       <AnimatedSection id="project-detail" className="bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="mb-6 sm:mb-8">
-            <Button
+          <div className="mb-6 sm:mb-8 pt-10">
+            <Button 
               to="/#projects"
               variant="secondary"
               icon={<ArrowLeft size={16} className="sm:w-5 sm:h-5" />}

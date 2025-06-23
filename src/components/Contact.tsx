@@ -1,7 +1,8 @@
 // Contact.tsx
 import React, { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, Linkedin, Github, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, Linkedin, Github, Instagram } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 //============== UI COMPONENTS & HOOKS (SELF-CONTAINED) ==============
 // --- Custom Hook untuk Animasi Gulir ---
@@ -93,6 +94,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary';
   icon?: React.ReactNode;
+  disabled?: boolean;
 }
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -103,20 +105,22 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   variant = 'primary',
   icon,
+  disabled = false,
 }) => {
   const primaryClasses =
     'bg-blue-600 text-white hover:bg-blue-500 shadow-blue-500/20';
   const secondaryClasses =
     'bg-purple-600 text-white hover:bg-purple-500 shadow-purple-500/20';
-  const baseClasses = `inline-flex items-center justify-center gap-2 px-7 py-3 text-base font-semibold rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 ${
-    variant === 'primary' ? 'focus:ring-blue-400' : 'focus:ring-purple-400'
-  }`;
+  const baseClasses = `inline-flex items-center justify-center gap-2 px-7 py-3 text-base font-semibold rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 ${variant === 'primary' ? 'focus:ring-blue-400' : 'focus:ring-purple-400'
+    } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
+
   const content = (
     <>
       {children}
       {icon && <span className="ml-2">{icon}</span>}
     </>
   );
+
   if (to)
     return (
       <Link
@@ -144,6 +148,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       type={type}
       className={`${baseClasses} ${variant === 'primary' ? primaryClasses : secondaryClasses} ${className}`}
+      disabled={disabled}
     >
       {content}
     </button>
@@ -161,7 +166,7 @@ const SocialIcons: React.FC<{ className?: string }> = ({ className = '' }) => (
       <Github size={24} />
     </a>
     <a
-      href="www.linkedin.com/in/muhammad-farras-yasyfa-89a0b12a6"
+      href="https://www.linkedin.com/in/muhammad-farras-yasyfa-89a0b12a6"
       aria-label="LinkedIn"
       className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300"
     >
@@ -179,6 +184,51 @@ const SocialIcons: React.FC<{ className?: string }> = ({ className = '' }) => (
 
 //============== KOMPONEN KONTAK ==============
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!form.current) return;
+
+    // Cek jika field kosong
+    const formData = new FormData(form.current);
+    if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+      alert('Please fill in all fields before sending.');
+      return;
+    }
+
+    setStatus('loading');
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log('SUCCESS!', result.text);
+          setStatus('success');
+          if (form.current) form.current.reset(); // Reset form setelah berhasil
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setStatus('error');
+        }
+      );
+  };
+
+  const getButtonText = () => {
+    switch (status) {
+      case 'loading': return 'Sending Transmission...';
+      case 'success': return 'Message Sent!';
+      case 'error': return 'Failed, Try Again';
+      default: return 'Send Transmission';
+    }
+  };
+
   return (
     <>
       <style>
@@ -194,10 +244,7 @@ const Contact = () => {
           />
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Kolom Kiri: Info dan Pesan */}
-            <div
-              className="child-animate space-y-8"
-              style={{ transitionDelay: '200ms' }}
-            >
+            <div className="child-animate space-y-8" style={{ transitionDelay: '200ms' }}>
               <h3 className="text-4xl font-orbitron font-bold text-white">
                 Let's Build Something Legendary.
               </h3>
@@ -207,10 +254,7 @@ const Contact = () => {
                 freelance opportunities and ready to join your quest.
               </p>
               <div className="space-y-4">
-                <a
-                  href="mailto:mfarras2004@gmail.com"
-                  className="flex items-center p-4 rounded-lg bg-gray-800/60 border border-gray-700 hover:border-blue-500 hover:bg-gray-800 transition-all duration-300"
-                >
+                <a href="mailto:mfarras2004@gmail.com" className="flex items-center p-4 rounded-lg bg-gray-800/60 border border-gray-700 hover:border-blue-500 hover:bg-gray-800 transition-all duration-300">
                   <Mail className="w-7 h-7 mr-4 text-blue-400" />
                   <div>
                     <span className="text-gray-400 text-sm">Email Me</span>
@@ -219,10 +263,7 @@ const Contact = () => {
                     </span>
                   </div>
                 </a>
-                <a
-                  href="tel:+6281234567890"
-                  className="flex items-center p-4 rounded-lg bg-gray-800/60 border border-gray-700 hover:border-blue-500 hover:bg-gray-800 transition-all duration-300"
-                >
+                <a href="tel:+6281314935717" className="flex items-center p-4 rounded-lg bg-gray-800/60 border border-gray-700 hover:border-blue-500 hover:bg-gray-800 transition-all duration-300">
                   <Phone className="w-7 h-7 mr-4 text-blue-400" />
                   <div>
                     <span className="text-gray-400 text-sm">Call Me</span>
@@ -239,55 +280,55 @@ const Contact = () => {
                 <SocialIcons />
               </div>
             </div>
+
             {/* Kolom Kanan: Formulir */}
             <div className="child-animate" style={{ transitionDelay: '300ms' }}>
               <Card className="!p-8 shadow-2xl border-gray-800">
-                <form>
+                <form ref={form} onSubmit={sendEmail}>
                   <div className="mb-6">
-                    <label
-                      htmlFor="name"
-                      className="block text-gray-300 font-semibold mb-2"
-                    >
+                    <label htmlFor="name" className="block text-gray-300 font-semibold mb-2">
                       Your Name
                     </label>
                     <input
                       type="text"
                       id="name"
+                      name="name" // Atribut 'name' penting untuk EmailJS
                       placeholder="e.g., Sung Jin-Woo"
                       className="w-full px-4 py-3 bg-gray-700/50 border-2 border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none focus:border-purple-500 transition-all duration-300 focus:shadow-lg focus:shadow-purple-500/20"
+                      required
                     />
                   </div>
                   <div className="mb-6">
-                    <label
-                      htmlFor="email"
-                      className="block text-gray-300 font-semibold mb-2"
-                    >
+                    <label htmlFor="email" className="block text-gray-300 font-semibold mb-2">
                       Your Email
                     </label>
                     <input
                       type="email"
                       id="email"
+                      name="email" // Atribut 'name' penting untuk EmailJS
                       placeholder="e.g., monarch@shadow.com"
                       className="w-full px-4 py-3 bg-gray-700/50 border-2 border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none focus:border-purple-500 transition-all duration-300 focus:shadow-lg focus:shadow-purple-500/20"
+                      required
                     />
                   </div>
                   <div className="mb-6">
-                    <label
-                      htmlFor="message"
-                      className="block text-gray-300 font-semibold mb-2"
-                    >
+                    <label htmlFor="message" className="block text-gray-300 font-semibold mb-2">
                       Your Message
                     </label>
                     <textarea
                       id="message"
+                      name="message" // Atribut 'name' penting untuk EmailJS
                       rows={5}
                       placeholder="Your mission details..."
                       className="w-full px-4 py-3 bg-gray-700/50 border-2 border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none focus:border-purple-500 transition-all duration-300 focus:shadow-lg focus:shadow-purple-500/20"
+                      required
                     ></textarea>
                   </div>
-                  <Button type="submit" className="w-full">
-                    Send Transmission
+                  <Button type="submit" className="w-full" disabled={status === 'loading' || status === 'success'}>
+                    {getButtonText()}
                   </Button>
+                  {status === 'success' && <p className="text-green-400 mt-4 text-center">Thank you! Your transmission was successful.</p>}
+                  {status === 'error' && <p className="text-red-400 mt-4 text-center">An error occurred. Please try again later.</p>}
                 </form>
               </Card>
             </div>

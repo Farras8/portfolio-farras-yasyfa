@@ -1,4 +1,3 @@
-// Home.tsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -15,6 +14,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary';
   icon?: React.ReactNode;
+  download?: boolean; // Added download prop
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -26,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   variant = 'primary',
   icon,
+  download = false, // Default to false
 }) => {
   const primaryClasses =
     'bg-blue-600 text-white hover:bg-blue-500 shadow-blue-500/20';
@@ -58,8 +59,9 @@ const Button: React.FC<ButtonProps> = ({
         href={href}
         onClick={onClick}
         className={`${baseClasses} ${variant === 'primary' ? primaryClasses : secondaryClasses} ${className}`}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={download ? '_self' : '_blank'} // Use _self for downloads to avoid new tab
+        rel={download ? undefined : 'noopener noreferrer'}
+        {...(download ? { download: true } : {})} // Add download attribute if download prop is true
       >
         {content}
       </a>
@@ -179,9 +181,9 @@ const Home = () => {
               View My Projects
             </Button>
             <Button
-              to="#contact"
-              onClick={(e) => handleButtonClick(e, 'contact')}
+              href="/CV - Muhammad Farras Yasyfa.pdf" // Path to the PDF in the public folder
               variant="secondary"
+              download={true} // Enable direct download
             >
               Download CV
             </Button>
