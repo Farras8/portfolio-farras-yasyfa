@@ -69,7 +69,7 @@ const About = () => (
               <div className="md:col-span-2 child-animate" style={{transitionDelay: '200ms'}}>
                   <div className="p-2 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-lg shadow-xl">
                     <div className="p-1 bg-gray-900 rounded-md">
-                      <img src={`../../public/Photo.jpg`} alt="Muhammad Farras" className="rounded-sm w-full object-cover"/>
+                      <img src={`/Photo.jpg`} alt="Muhammad Farras" className="rounded-sm w-full object-cover"/>
                     </div>
                   </div>
               </div>
