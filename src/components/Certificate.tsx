@@ -1,6 +1,6 @@
-// Certificate.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { allCertificates } from '../Data/CertificateData';
 
 //============== UI COMPONENTS & HOOKS (SELF-CONTAINED) ==============
 // --- Custom Hook untuk Animasi Gulir ---
@@ -151,120 +151,6 @@ const Button: React.FC<ButtonProps> = ({
 
 //============== CERTIFICATE COMPONENT ==============
 const Certificate = () => {
-  const allCertificates = [
-    {
-      name: 'Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud',
-      yearAchieve: 'Oct 2024',
-      yearEnd: 'Oct 2027',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: N9ZOYYVE6PG5',
-      url: 'https://www.dicoding.com/certificates/N9ZOYYVE6PG5',
-    },
-    {
-      name: 'Belajar Dasar AI',
-      yearAchieve: 'Oct 2024',
-      yearEnd: 'Oct 2027',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 6RPNYRDW4Z2M',
-      url: 'https://www.dicoding.com/certificates/6RPNYRDW4Z2M',
-    },
-    {
-      name: 'Menjadi Google Cloud Engineer',
-      yearAchieve: 'Nov 2024',
-      yearEnd: 'Nov 2027',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 1RXY2WJW1XVM',
-      url: 'https://www.dicoding.com/certificates/1RXY2WJW1XVM',
-    },
-    {
-      name: 'Belajar Penerapan Machine Learning dengan Google Cloud',
-      yearAchieve: 'Nov 2024',
-      yearEnd: 'Nov 2027',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: MRZMYJMQNZYQ',
-      url: 'https://www.dicoding.com/certificates/MRZMYJMQNZYQ',
-    },
-    {
-      name: 'Pengenalan ke Logika Pemrograman (Programming Logic 101)',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 2VX3KJ3JQXYQ',
-      url: 'https://www.dicoding.com/certificates/2VX3KJ3JQXYQ',
-    },
-    {
-      name: 'Memulai Dasar Pemrograman untuk Menjadi Pengembang Software',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 1RXYE6VO3ZVM',
-      url: 'https://www.dicoding.com/certificates/1RXYE6VO3ZVM',
-    },
-    {
-      name: 'Belajar Membuat Front-End Web untuk Pemula',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 1OP8209MQPQK',
-      url: 'https://www.dicoding.com/certificates/1OP8209MQPQK',
-    },
-    {
-      name: 'Belajar Fundamental Front-End Web Development',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 4EXGVQ19QXRL',
-      url: 'https://www.dicoding.com/certificates/4EXGVQ19QXRL',
-    },
-    {
-      name: 'Belajar Dasar Pemrograman Web',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 4EXGVN2G1XRL',
-      url: 'https://www.dicoding.com/certificates/4EXGVN2G1XRL',
-    },
-    {
-      name: 'Belajar Dasar Pemrograman JavaScript',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 6RPNR43D8X2M',
-      url: 'https://www.dicoding.com/certificates/6RPNR43D8X2M',
-    },
-    {
-      name: 'Belajar Dasar Git dengan GitHub',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: 07Z63V63JZQR',
-      url: 'https://www.dicoding.com/certificates/07Z63V63JZQR',
-    },
-    {
-      name: 'Belajar Pengembangan Web Intermediate',
-      yearAchieve: 'Mei 2025',
-      yearEnd: 'Mei 2028',
-      previewImage: '/dicoding.png',
-      credentialId: 'ID: L4PQEDRWOPO1',
-      url: 'https://www.dicoding.com/certificates/L4PQEDRWOPO1',
-    },
-    {
-      name: 'Associate Cloud Engineer Certification',
-      yearAchieve: 'Mei 2025',
-      yearEnd: 'Mei 2028',
-      previewImage: '/Google.png',
-      credentialId: 'ID: b510c1898a6545048ca219da9fc704a2',
-      url: 'https://www.credly.com/badges/10f41946-8aa7-4801-83d4-0f13cf8d0175/linked_in_profile',
-    },
-    {
-      name: 'Certificate of Achievement - Bank Mandiri Mobile Apps Developer Project Based Internship Program',
-      yearAchieve: 'Feb 2025',
-      yearEnd: 'Feb 2028',
-      previewImage: '/Mandiri.png',
-      credentialId: 'ID: 309173IAPMGIM2362024',
-      url: 'https://www.dicoding.com/certificates/2VX3KJ3JQXYQ',
-    },
-  ];
   const [showAll, setShowAll] = useState(false);
   const limit = 3;
   const certificatesToShow = showAll ? allCertificates : allCertificates.slice(0, limit);
@@ -307,10 +193,14 @@ const Certificate = () => {
                     <h3 className="font-bold text-xl text-white font-orbitron min-h-[56px]">
                       {cert.name}
                     </h3>
-                    <p className="text-gray-500 mt-1 text-xs">{`Achieved: ${cert.yearAchieve} - Valid Until: ${cert.yearEnd}`}</p>
-                    <p className="text-xs text-blue-400 mt-4 font-mono bg-gray-900/50 px-2 py-1 rounded w-fit">
-                      {cert.credentialId}
+                    <p className="text-gray-500 mt-1 text-xs">
+                      {`Achieved: ${cert.yearAchieve}${cert.yearEnd ? ` - Valid Until: ${cert.yearEnd}` : ''}`}
                     </p>
+                    {cert.credentialId && (
+                      <p className="text-xs text-blue-400 mt-4 font-mono bg-gray-900/50 px-2 py-1 rounded w-fit">
+                        {cert.credentialId}
+                      </p>
+                    )}
                     <div className="mt-auto pt-4 border-t border-gray-700 mt-4">
                       <Button href={cert.url} className="w-full !py-2 !text-sm">
                         Inspect Artifact

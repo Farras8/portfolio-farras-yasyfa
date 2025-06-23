@@ -176,14 +176,14 @@ const Home = () => {
               onClick={(e) => handleButtonClick(e, 'projects')}
               icon={<ArrowRight size={18} />}
             >
-              View My Arsenal
+              View My Projects
             </Button>
             <Button
               to="#contact"
               onClick={(e) => handleButtonClick(e, 'contact')}
               variant="secondary"
             >
-              Summon Me
+              Download CV
             </Button>
           </div>
         </div>

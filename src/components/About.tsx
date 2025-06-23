@@ -74,9 +74,10 @@ const About = () => (
                   </div>
               </div>
               <div className="md:col-span-3 text-lg text-gray-300 space-y-4 child-animate" style={{transitionDelay: '300ms'}}>
-                  <h3 className="text-3xl font-orbitron font-bold text-white">Leveling Up, One Project at a Time.</h3>
-                  <p>My quest in the tech world is driven by a simple principle: continuous growth. Like a hunter leveling up, I tackle each project as a new dungeon, filled with unique challenges and opportunities to acquire new skills. My goal is to transform complex problems into efficient, scalable, and user-centric systems.</p>
-                  <p>From back-end architecture to front-end execution, I am the system architect who ensures every component works in perfect harmony. I don't just write code; I design systems built to last and perform under pressure.</p>
+                  <h3 className="text-3xl font-orbitron font-bold text-white">Crafting Code, Building Futures.</h3>
+                  <p>Hi, I’m Muhammad Farras Yasyfa, an undergraduate student majoring in Informatics Engineering at Politeknik Negeri Jakarta. My journey in tech is fueled by a deep passion for building — whether it’s crafting intuitive front-end experiences, architecting robust back-end systems, or scaling solutions through cloud infrastructure.</p>
+                  <p>I see every project as an opportunity to grow, challenge myself, and refine my skills in both web development and cloud computing. I'm not just interested in writing code; I'm passionate about designing solutions that are clean, scalable, and meaningful to real users.</p>
+                  <p>Whether it’s building APIs, designing UI, or deploying to the cloud — I aim to bridge the gap between idea and execution.</p>
               </div>
           </div>
       </div>

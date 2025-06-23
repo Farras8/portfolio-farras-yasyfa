@@ -73,7 +73,6 @@ interface TimelineItemProps {
   institution: string;
   years: string;
   gpa?: string;
-  description: string;
   isLast?: boolean;
 }
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -81,7 +80,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   institution,
   years,
   gpa,
-  description,
   isLast = false,
 }) => (
   <div className="relative pl-8 sm:pl-12">
@@ -100,7 +98,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       {gpa && (
         <p className="text-purple-400 font-mono text-sm mt-2">GPA: {gpa}</p>
       )}
-      <p className="text-gray-400 mt-3">{description}</p>
     </div>
   </div>
 );
@@ -112,25 +109,19 @@ const Education = () => {
       degree: 'Undergraduate Student of Informatics Engineering',
       institution: 'State Polytechnic of Jakarta',
       years: 'Aug 2022 - Present',
-      gpa: '3.6',
-      description:
-        'Focused on software engineering, artificial intelligence, and cloud computing. Graduated with honors, leading a final project on machine learning implementation.',
+      gpa: '3.69',
     },
     {
       degree: 'Associate degree, Informatics Engineering',
       institution: 'CEP – CCIT FTUI',
       years: 'Aug 2022 - Aug 2024',
       gpa: '3.51',
-      description:
-        'Focused on software engineering, artificial intelligence, and cloud computing. Graduated with honors, leading a final project on machine learning implementation.',
     },
     {
       degree: 'Cloud Computing Cohort',
       institution:
         'Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka',
       years: 'Aug 2024 - Des 2024',
-      description:
-        'Completed an intensive learning path covering Google Cloud Platform fundamentals, back-end architecture, and microservices. Achieved excellent results in all modules.',
     },
   ];
 
@@ -159,7 +150,6 @@ const Education = () => {
                   institution={edu.institution}
                   years={edu.years}
                   gpa={edu.gpa}
-                  description={edu.description}
                   isLast={i === educationHistory.length - 1}
                 />
               </div>
