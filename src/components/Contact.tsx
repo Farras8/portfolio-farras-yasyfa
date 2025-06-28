@@ -239,7 +239,7 @@ const Contact = () => {
       <AnimatedSection id="contact" className="bg-gray-900/70 backdrop-blur-md">
         <div className="container mx-auto px-6">
           <SectionHeader
-            title="Open a Gate"
+            title="Contact Me"
             subtitle="Ready to start a new mission? Send your coordinates."
           />
           <div className="grid lg:grid-cols-2 gap-16 items-start">

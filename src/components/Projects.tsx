@@ -173,7 +173,7 @@ const Projects = () => {
         <div className="container mx-auto px-6">
           <SectionHeader
             title="Projects"
-            subtitle="A showcase of successfully conquered dungeons."
+            subtitle="A showcase of successfully projects."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectsToShow.map((p, i) => (

@@ -64,7 +64,7 @@ const SectionHeader: React.FC<{ title: string; subtitle: string }> = ({ title, s
 const About = () => (
     <AnimatedSection id="about" className="bg-gray-900/70 backdrop-blur-md">
       <div className="container mx-auto px-6">
-          <SectionHeader title="The Architect" subtitle="Behind the code, there's a mission." />
+          <SectionHeader title="About Me" subtitle="Behind the code, there's a mission." />
           <div className="grid md:grid-cols-5 gap-12 items-center">
               <div className="md:col-span-2 child-animate" style={{transitionDelay: '200ms'}}>
                   <div className="p-2 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-lg shadow-xl">

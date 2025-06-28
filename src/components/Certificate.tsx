@@ -170,8 +170,8 @@ const Certificate = () => {
       <AnimatedSection id="certificate" className="bg-gray-900">
         <div className="container mx-auto px-6">
           <SectionHeader
-            title="Artifacts & Runes"
-            subtitle="Proof of my acquired power and knowledge."
+            title="Certificates & Achievements"
+            subtitle="Proof of my  knowledge."
           />
           <div className="grid lg:grid-cols-3 gap-8">
             {certificatesToShow.map((cert, i) => (
@@ -203,7 +203,7 @@ const Certificate = () => {
                     )}
                     <div className="mt-auto pt-4 border-t border-gray-700 mt-4">
                       <Button href={cert.url} className="w-full !py-2 !text-sm">
-                        Inspect Artifact
+                        Inspect Certificate
                       </Button>
                     </div>
                   </div>
@@ -222,7 +222,7 @@ const Certificate = () => {
                 </Button>
               ) : (
                 <Button onClick={() => setShowAll(true)} variant="secondary">
-                  Show All Artifacts
+                  View All Certificates
                 </Button>
               )}
             </div>

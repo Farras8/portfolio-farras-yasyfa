@@ -169,8 +169,7 @@ const Home = () => {
             <span className="text-purple-400">{'/>'}</span>
           </p>
           <p className="max-w-xl mx-auto text-gray-400 mb-10">
-            Forging powerful digital solutions from complex challenges.
-            Specializing in elegant, high-performance systems.
+            Passionate web development enthusiast crafting modern, user-friendly digital experiences. Always eager to learn and explore new technologies.
           </p>
           <div className="space-y-4 sm:space-y-0 sm:space-x-4">
             <Button
