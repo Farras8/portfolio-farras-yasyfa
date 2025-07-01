@@ -84,7 +84,7 @@ const Home = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(120);
-  const toRotate = ['Full-Stack Web Developer', 'UI/UX Designer', 'Cloud Engineer'];
+  const toRotate = ['Full-Stack Web Developer'];
   const period = 3000;
 
   const handleButtonClick = (
