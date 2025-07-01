@@ -1,7 +1,7 @@
 // Footer.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Github, Instagram } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 // Komponen SocialIcons (Self-contained)
 const SocialIcons: React.FC<{ className?: string }> = ({ className = '' }) => (
@@ -11,21 +11,21 @@ const SocialIcons: React.FC<{ className?: string }> = ({ className = '' }) => (
       aria-label="Github"
       className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300"
     >
-      <Github size={24} />
+      <FaGithub size={24} />
     </a>
     <a
-      href="www.linkedin.com/in/muhammad-farras-yasyfa-89a0b12a6"
+      href="https://www.linkedin.com/in/muhammad-farras-yasyfa-89a0b12a6"
       aria-label="LinkedIn"
       className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300"
     >
-      <Linkedin size={24} />
+      <FaLinkedin size={24} />
     </a>
     <a
       href="https://www.instagram.com/farrasyasyfa/"
       aria-label="Instagram"
       className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300"
     >
-      <Instagram size={24} />
+      <FaInstagram size={24} />
     </a>
   </div>
 );
