@@ -47,7 +47,6 @@ const Footer = () => (
         >
           FARRAS
         </Link>
-        <p className="text-gray-400 max-w-md mx-auto mb-6">Arise.</p>
         <div className="mb-6">
           <SocialIcons />
         </div>

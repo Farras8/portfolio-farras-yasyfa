@@ -293,7 +293,7 @@ const Contact = () => {
                       type="text"
                       id="name"
                       name="name" // Atribut 'name' penting untuk EmailJS
-                      placeholder="e.g., Sung Jin-Woo"
+                      placeholder="e.g., Farras Yasyfa"
                       className="w-full px-4 py-3 bg-gray-700/50 border-2 border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none focus:border-purple-500 transition-all duration-300 focus:shadow-lg focus:shadow-purple-500/20"
                       required
                     />
@@ -306,7 +306,7 @@ const Contact = () => {
                       type="email"
                       id="email"
                       name="email" // Atribut 'name' penting untuk EmailJS
-                      placeholder="e.g., monarch@shadow.com"
+                      placeholder="farras@example.com"
                       className="w-full px-4 py-3 bg-gray-700/50 border-2 border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none focus:border-purple-500 transition-all duration-300 focus:shadow-lg focus:shadow-purple-500/20"
                       required
                     />
@@ -319,7 +319,7 @@ const Contact = () => {
                       id="message"
                       name="message" // Atribut 'name' penting untuk EmailJS
                       rows={5}
-                      placeholder="Your mission details..."
+                      placeholder="Your Message...."
                       className="w-full px-4 py-3 bg-gray-700/50 border-2 border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none focus:border-purple-500 transition-all duration-300 focus:shadow-lg focus:shadow-purple-500/20"
                       required
                     ></textarea>
