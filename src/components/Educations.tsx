@@ -115,7 +115,7 @@ const Education = () => {
       degree: 'Associate degree, Informatics Engineering',
       institution: 'CEP – CCIT FTUI',
       years: 'Aug 2022 - Aug 2024',
-      gpa: '3.51',
+      gpa: '3.54',
     },
     {
       degree: 'Cloud Computing Cohort',
