@@ -12,7 +12,7 @@ export interface ProjectData {
   duration: string;
   team: string;
   client: string;
-  status: 'Completed' | 'In Progress' | 'Planned';
+  status: 'Completed' | 'In Progress' | 'Planned' | 'Maintenance';
   liveUrl: string;
   codeUrl: string;
   rank: 'S-Rank' | 'A-Rank' | 'B-Rank' | 'C-Rank';
@@ -53,7 +53,7 @@ export const projects: ProjectData[] = [
     duration: '1 months',
     team: '6 developers, 3 Front-End Back-End, 3 Machine Learning',
     client: 'TechCorp',
-    status: 'Completed',
+    status: 'Maintenance',
     liveUrl: 'https://job-mate-six.vercel.app/',
     codeUrl: 'https://github.com/Farras8/JobMate.git',
     rank: 'S-Rank',
