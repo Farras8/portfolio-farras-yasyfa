@@ -123,6 +123,12 @@ const Education = () => {
         'Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka',
       years: 'Aug 2024 - Des 2024',
     },
+    {
+      degree: 'Front-End & Back-End Developer Cohort',
+      institution:
+        'Coding Camp powered by DBS Foundation',
+      years: 'Feb 2025 - Jul 2025',
+    },
   ];
 
   return (

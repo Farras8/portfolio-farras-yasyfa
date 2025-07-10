@@ -8,6 +8,18 @@ export const allCertificates = [
     url: 'https://www.credly.com/badges/10f41946-8aa7-4801-83d4-0f13cf8d0175/linked_in_profile',
   },
   {
+    name: 'Certificate of Best 20 Team Capstone Project by Coding Camp powered by DBS Foundation',
+    yearAchieve: 'Jul 2025',
+    previewImage: '/DBS.png',
+    url: 'https://drive.google.com/drive/folders/1Vxkp6gLcuO71T2n_kGASUbEUCYi6FmlQ?usp=drive_link',
+  },
+  {
+    name: 'Certificate of Completion Bangkit Academy, specialiazing in Cloud Computing',
+    yearAchieve: 'Jan 2025',
+    previewImage: '/Bangkit.png',
+    url: 'https://drive.google.com/drive/folders/1QeV05_0OMUWJu0PLDKazeGnrs9M-Bsp4',
+  },
+  {
     name: 'Certificate of Achievement - Bank Mandiri Mobile Apps Developer Project Based Internship Program',
     yearAchieve: 'Jul 2024',
     previewImage: '/Mandiri.png',
@@ -18,12 +30,6 @@ export const allCertificates = [
     yearAchieve: 'March 2025',
     previewImage: '/CCIT.png',
     url: 'https://drive.google.com/drive/folders/1Qd6iMFS-88JEJe6G1skRp5rs8_6ydE9s',
-  },
-  {
-    name: 'Certificate of Completion Bangkit Acadeky, specialiazing in Cloud Computing',
-    yearAchieve: 'Jan 2025',
-    previewImage: '/Bangkit.png',
-    url: 'https://drive.google.com/drive/folders/1QeV05_0OMUWJu0PLDKazeGnrs9M-Bsp4',
   },
   {
     name: 'Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud',

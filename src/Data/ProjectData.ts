@@ -53,11 +53,11 @@ export const projects: ProjectData[] = [
     duration: '1 months',
     team: '6 developers, 3 Front-End Back-End, 3 Machine Learning',
     client: 'TechCorp',
-    status: 'Maintenance',
+    status: 'In Progress',
     liveUrl: 'https://job-mate-six.vercel.app/',
     codeUrl: 'https://github.com/Farras8/JobMate.git',
     rank: 'S-Rank',
-    completionDate: '2025-06-13',
+    completionDate: 'In Progress',
   },
   {
     id: 'sustainWise-002',
