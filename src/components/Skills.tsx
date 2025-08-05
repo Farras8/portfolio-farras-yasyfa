@@ -44,8 +44,8 @@ const SectionHeader: React.FC<{ title: string; subtitle: string }> = ({ title, s
 const Skills = () => {
     const skills = {
         "Frontend": ["React", "JavaScript (ES6+)", "TypeScript", "HTML5 & CSS3", "Tailwind CSS", "Kotlin"],
-        "Backend": ["Node.js", "Express.js", "Python", "PHP"],
-        "Database": ["MySQL", "Firebase"],
+        "Backend": ["Node.js", "Express.js", "Python", "PHP", "Laravel"],
+        "Database": ["MySQL", "Firebase", "PostgreSQL"],
         "System & Tools": ["Git & GitHub", "Docker", "Figma", "Microsoft Office"]
     };
     return (
