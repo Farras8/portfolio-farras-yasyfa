@@ -7,7 +7,7 @@ export interface ProjectData {
   longDescription: string;
   technologies: string[];
   features: string[];
-  myJobDesk: string[]; // <- updated from 'challenges'
+  myJobDesk: string[]; 
   images: string[];
   duration: string;
   team: string;
@@ -17,6 +17,7 @@ export interface ProjectData {
   codeUrl: string;
   rank: 'S-Rank' | 'A-Rank' | 'B-Rank' | 'C-Rank';
   completionDate: string;
+  maintenanceMessage?: string;
 }
 
 export const projects: ProjectData[] = [
@@ -53,11 +54,12 @@ export const projects: ProjectData[] = [
     duration: '1 months',
     team: '6 developers, 3 Front-End Back-End, 3 Machine Learning',
     client: 'TechCorp',
-    status: 'In Progress',
+    status: 'Maintenance',
     liveUrl: 'https://job-mate-six.vercel.app/',
     codeUrl: 'https://github.com/Farras8/JobMate.git',
     rank: 'S-Rank',
     completionDate: 'In Progress',
+    maintenanceMessage: 'Project ini sedang dalam maintenance karena GCP free trial telah berakhir. Sedang mencari hosting baru untuk API backend dan ML model.',
   },
     {
     id: 'Harmoni Alam-008',
@@ -148,11 +150,12 @@ export const projects: ProjectData[] = [
     duration: '1 months',
     team: '3 developer',
     client: 'TIC UNEJ',
-    status: 'Completed',
+    status: 'Maintenance',
     liveUrl: 'https://harmonii-alam.vercel.app/',
     codeUrl: 'https://github.com/Farras8/HarmoniiAlam.git',
     rank: 'A-Rank',
     completionDate: '2025-08-03',
+    maintenanceMessage: 'Project ini sedang dalam maintenance karena GCP free trial telah berakhir. Sedang mencari hosting baru untuk API backend ',
   },
   {
     id: 'sustainWise-002',
