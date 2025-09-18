@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Certificate from './components/Certificate';
@@ -24,6 +25,7 @@ const App: React.FC = () => {
               <>
                 <Home />
                 <About />
+                <Experience />
                 <Educations />
                 <Projects />
                 <Certificate />
