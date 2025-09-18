@@ -101,7 +101,7 @@ export const projects: ProjectData[] = [
       '/JobMate3.png',
       '/JobMate4.png',
     ],
-    duration: '1 months',
+    duration: 'On-going',
     team: '6 developers, 3 Front-End Back-End, 3 Machine Learning',
     client: 'Dicoding',
     status: 'Maintenance',
@@ -206,6 +206,51 @@ export const projects: ProjectData[] = [
     rank: 'A-Rank',
     completionDate: '2025-08-03',
     maintenanceMessage: 'Project ini sedang dalam maintenance karena GCP free trial telah berakhir. Sedang mencari hosting baru untuk API backend ',
+  },
+  {
+    id: 'Portfolio-009',
+    title: 'Project: Personal Portfolio Website',
+    subtitle: 'Modern React Portfolio',
+    description: 'A modern, responsive personal portfolio website built with React, TypeScript, and Tailwind CSS, showcasing projects, skills, experience, and professional achievements with smooth animations and interactive features.',
+
+    longDescription: 'This personal portfolio website represents a comprehensive showcase of my professional journey as a Full-Stack Web Developer. Built with modern web technologies, the site features a sleek, responsive design with smooth scroll animations, interactive components, and a professional layout. The portfolio includes dedicated sections for projects, skills, experience, education, certificates, and contact information. Each project is presented with detailed information, live demos, and source code links. The site implements modern UI/UX principles with a dark theme, gradient accents, and smooth transitions throughout.',
+
+    technologies: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'TailwindCSS',
+      'React Router DOM',
+      'Lucide React',
+      'React Icons',
+      'Intersection Observer API',
+      'CSS Animations',
+      'Responsive Design'
+    ],
+    features: [
+      'Responsive design with smooth scroll animations',
+      'Interactive project showcase with detailed views',
+      'Professional timeline for experience and education',
+      'Modern dark theme with gradient accents',
+      'Contact integration with CV download'
+    ],
+    myJobDesk: [
+      'Frontend Development - Built complete React TypeScript application with modern component architecture',
+      'UI/UX Design - Designed responsive layouts using TailwindCSS with smooth animations',
+      'Component Development - Created 15+ reusable components and implemented routing system',
+      'Deployment & Optimization - Configured Vite build and deployed to Vercel with performance optimization'
+    ],
+    images: [
+      '/Portfolio1.jpeg',
+    ],
+    duration: '1 weeks',
+    team: '1 developer',
+    client: 'Personal Project',
+    status: 'Completed',
+    liveUrl: 'https://portfolio-farras-yasyfa.vercel.app/',
+    codeUrl: 'https://github.com/Farras8/portfolio-farras-yasyfa.git',
+    rank: 'A-Rank',
+    completionDate: '2025-07-15',
   },
   {
     id: 'sustainWise-002',
