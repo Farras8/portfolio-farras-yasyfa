@@ -7,12 +7,12 @@ export interface ProjectData {
   longDescription: string;
   technologies: string[];
   features: string[];
-  myJobDesk: string[]; 
+  myJobDesk: string[];
   images: string[];
   duration: string;
   team: string;
   client: string;
-  status: 'Completed' | 'In Progress' | 'Planned' | 'Maintenance';
+  status: string;
   liveUrl: string;
   codeUrl: string;
   rank: 'S-Rank' | 'A-Rank' | 'B-Rank' | 'C-Rank';
@@ -21,6 +21,56 @@ export interface ProjectData {
 }
 
 export const projects: ProjectData[] = [
+  {
+    "id": "dsimfoniku-009",
+    "title": "Project: Dsimfoniku",
+    "subtitle": "Health Inspection Website for the Health Department",
+    "description": "Dsimfoniku is a Laravel-based web application designed for the Health Department and community health centers (Puskesmas) to conduct and manage environmental health inspections through structured digital forms.",
+    "longDescription": "Dsimfoniku is a web-based health inspection system that enables the Health Department and community health centers (Puskesmas) to digitize the process of recording and reporting environmental health inspections. The platform provides structured forms for various types of inspections and supports full data management with CRUD operations, duplication, advanced search, filtering, and inspection history export. Super Admin (Health Department) can manage all inspection data and Admin accounts, while Admin (Puskesmas) can only access their own inspection records. The system also includes profile management, editable letterheads for official inspection reports, and PDF generation for inspection results with customized headers. This makes the reporting process more efficient, standardized, and professional.",
+    "technologies": [
+    "Laravel",
+    "PHP",
+    "MariaDB/MySQL",
+    "Tailwind",
+    "DaisyUI",
+    "jQuery",
+    "Vite",
+    "Laravel DomPDF",
+    "Maatwebsite Excel",
+    "Domainesia"
+    ],
+    "features": [
+      "Two user roles: Super Admin (Health Department) and Admin (Community Health Center)",
+      "CRUD operations for environmental health inspection forms",
+      "Duplicate inspections for faster data entry",
+      "Inspection history with search, filter, and CSV export functionality",
+      "Role-based access: Super Admin can view all inspections, Admin can only view their own",
+      "Profile management: Super Admin can edit all Admin profiles, Admin can only edit their own",
+      "Letterhead editor with live PDF preview for official inspection reports",
+      "Download inspection reports in PDF format with customized letterhead"
+    ],
+    "myJobDesk": [
+      "Developed CRUD functionality for three new inspection forms",
+      "Updated one existing inspection form with improvements",
+      "Established relational mapping between database tables in MySQL",
+      "Fixed and optimized search and filter functionality for inspection history",
+      "Implemented letterhead editing feature with live PDF preview",
+      "Re-deployed and configured the website hosting on Domainesia (cPanel)"
+    ],
+    "images": [
+      "/Dsimfoniku1.jpeg",
+      "/Dsimfoniku2.jpeg",
+      "/Dsimfoniku3.jpeg"
+    ],
+    "duration": "On-going (Maintenance Project)",
+    "team": "1 Developer (Maintenance)",
+    "client": "Health Department",
+    "status": "In Progress",
+    "liveUrl": "https://dsimfoniku.com/",
+    "codeUrl": "https://github.com/depokitdinkes-netizen/dsimfoniku_dinkes.git",
+    "rank": "S-Rank",
+    "completionDate": "In Progress"
+  },
   {
     id: 'jobmate-001',
     title: 'Project: JobMate',
@@ -53,7 +103,7 @@ export const projects: ProjectData[] = [
     ],
     duration: '1 months',
     team: '6 developers, 3 Front-End Back-End, 3 Machine Learning',
-    client: 'TechCorp',
+    client: 'Dicoding',
     status: 'Maintenance',
     liveUrl: 'https://job-mate-six.vercel.app/',
     codeUrl: 'https://github.com/Farras8/JobMate.git',
@@ -61,7 +111,7 @@ export const projects: ProjectData[] = [
     completionDate: 'In Progress',
     maintenanceMessage: 'Project ini sedang dalam maintenance karena GCP free trial telah berakhir. Sedang mencari hosting baru untuk API backend dan ML model.',
   },
-    {
+  {
     id: 'Harmoni Alam-008',
     title: 'Project: HarmoniAlam',
     subtitle: 'Environmental Volunteer Platform',
