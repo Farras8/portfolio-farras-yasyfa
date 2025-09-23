@@ -108,8 +108,7 @@ export const projects: ProjectData[] = [
     liveUrl: 'https://job-mate-six.vercel.app/',
     codeUrl: 'https://github.com/Farras8/JobMate.git',
     rank: 'S-Rank',
-    completionDate: 'In Progress',
-    maintenanceMessage: 'Project ini sedang dalam maintenance karena GCP free trial telah berakhir. Sedang mencari hosting baru untuk API backend dan ML model.',
+    completionDate: 'In Progress'
   },
   {
     id: 'Harmoni Alam-008',
