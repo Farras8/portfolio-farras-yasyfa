@@ -104,11 +104,11 @@ export const projects: ProjectData[] = [
     duration: 'On-going',
     team: '6 developers, 3 Front-End Back-End, 3 Machine Learning',
     client: 'Dicoding',
-    status: 'Maintenance',
+    status: 'Completed but still improving',
     liveUrl: 'https://job-mate-six.vercel.app/',
     codeUrl: 'https://github.com/Farras8/JobMate.git',
     rank: 'S-Rank',
-    completionDate: 'In Progress'
+    completionDate: '2025-07-28'
   },
   {
     id: 'Harmoni Alam-008',
