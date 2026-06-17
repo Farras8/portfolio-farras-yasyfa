@@ -180,11 +180,18 @@ const Home = () => {
               View My Projects
             </Button>
             <Button
-              href="/CV - Muhammad Farras Yasyfa.pdf" // Path to the PDF in the public folder
+              href="/CV - Muhammad Farras Yasyfa.pdf"
               variant="secondary"
-              download={true} // Enable direct download
+              download={true}
             >
               Download CV
+            </Button>
+            <Button
+              href="/Portfolio - Muhammad Farras Yasyfa.docx"
+              variant="secondary"
+              download={true}
+            >
+              Download Portfolio
             </Button>
           </div>
         </div>

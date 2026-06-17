@@ -22,6 +22,145 @@ export interface ProjectData {
 
 export const projects: ProjectData[] = [
   {
+    id: 'finance-form-system-010',
+    title: 'Project: Finance Form System',
+    subtitle: 'Internal Finance Workflow System',
+    description:
+      'Internal web system for automating company finance workflows including LPJ (accountability reports), advance payment requests, approval processes, and digital document management.',
+    longDescription:
+      'Finance Form System is an internal web application built to digitize and streamline company finance workflows. It handles the full lifecycle of financial documents including LPJ (accountability reports), advance payment submissions, and multi-level approval processes. The system supports role-based access control with JWT authentication and a layered permission middleware, ensuring each employee only accesses relevant financial data. Built for a team of 35 employees, the application prioritizes simplicity and reliability over enterprise complexity.',
+    technologies: [
+      'Go',
+      'Gin',
+      'Next.js',
+      'PostgreSQL',
+      'JWT',
+      'Bun ORM',
+      'Zap Logger',
+      'Web Push',
+      'Cron'
+    ],
+    features: [
+      'LPJ (accountability report) submission and management',
+      'Advance payment request and approval workflow',
+      'Multi-level role-based access control with JWT authentication',
+      'Push notification integration for approval updates',
+      'Scheduled jobs for automated reminders and processing',
+      'Digital document management and export'
+    ],
+    myJobDesk: [
+      'Designed and implemented RESTful API architecture using Go (Gin framework)',
+      'Built multi-layer middleware for authentication and permission management',
+      'Developed approval workflow logic and business rule engine',
+      'Integrated push notification system for real-time approval updates',
+      'Implemented scheduled jobs using Cron for automated processing',
+      'Contributed to frontend development using Next.js'
+    ],
+    images: [
+      '/Finance1.png',
+      '/Finance2.png',
+      '/Finance3.png',
+    ],
+    duration: 'On-going',
+    team: '3 developers (1 Backend, 1 Frontend, 1 Project Manager)',
+    client: 'Durich Agro Persada',
+    status: 'In Progress',
+    liveUrl: 'https://internalf.durich.id/',
+    codeUrl: 'https://github.com/IT-DURICH/finance-form-system.git',
+    rank: 'S-Rank',
+    completionDate: 'In Progress'
+  },
+  {
+    id: 'palm-fund-manager-011',
+    title: 'Project: Palm Fund Manager',
+    subtitle: 'Palm Oil Cash Flow & Profit Sharing System',
+    description:
+      'Internal web application for managing operational cash flow of a palm oil plantation and facilitating transparent profit sharing calculation and distribution among stakeholders.',
+    longDescription:
+      'Palm Fund Manager is a web-based financial management system developed for internal use at a palm oil plantation company. It centralizes the recording of all operational transactions (harvest, fertilizer, salaries, maintenance) and automates the calculation and allocation of profit sharing to various stakeholders. The system provides real-time financial reporting across daily, weekly, and monthly periods, with multi-role access ensuring each stakeholder level sees only relevant data.',
+    technologies: [
+      'Laravel',
+      'PHP',
+      'Vue.js 3',
+      'Inertia.js',
+      'TailwindCSS',
+      'MySQL',
+      'PostgreSQL',
+      'Vite'
+    ],
+    features: [
+      'Operational cash flow recording for plantation transactions',
+      'Automated profit sharing calculation and stakeholder allocation',
+      'Real-time financial reporting (daily, weekly, monthly)',
+      'Multi-role access control (Admin, Stakeholder, SuperAdmin)',
+      'Transaction categorization (harvest, fertilizer, salaries, maintenance)',
+      'Financial dashboard with summary and analytics'
+    ],
+    myJobDesk: [
+      'Developed backend using Laravel 12 MVC architecture',
+      'Built SPA frontend using Vue.js 3 with Inertia.js',
+      'Implemented multi-role authentication and access control system',
+      'Designed database schema and Eloquent ORM models',
+      'Created automated profit sharing calculation logic',
+      'Built financial reporting and dashboard features'
+    ],
+    images: [
+      '/Palm1.png',
+      '/Palm2.png',
+      '/Palm3.png',
+    ],
+    duration: 'On-going',
+    team: '3 developers (1 Backend, 1 Frontend, 1 Project Manager)',
+    client: 'Durich Agro Persada',
+    status: 'In Progress',
+    liveUrl: '#',
+    codeUrl: 'https://github.com/IT-DURICH/palm-fund-manager.git',
+    rank: 'S-Rank',
+    completionDate: 'In Progress'
+  },
+  {
+    id: 'durich-cp-012',
+    title: 'Project: Durich Company Profile',
+    subtitle: 'Company Profile Website',
+    description:
+      'Official company profile website for Durich Agro Persada, presenting the company\'s vision, mission, services, and business portfolio in a modern and professional web presence.',
+    longDescription:
+      'Durich Company Profile is the official web presence for Durich Agro Persada, a palm oil plantation company. The website showcases the company\'s profile, vision and mission, core services, and business information in a clean and professional design. Built as a full-stack application with a separate backend and frontend, the site serves as the digital front door for the company.',
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'TailwindCSS',
+      'Go',
+      'Gin'
+    ],
+    features: [
+      'Company profile and about section',
+      'Services and business portfolio showcase',
+      'Vision, mission, and company values presentation',
+      'Responsive design for all devices',
+      'Contact and inquiry section'
+    ],
+    myJobDesk: [
+      'Developed backend API using Go (Gin framework)',
+      'Built frontend using Next.js with TypeScript and TailwindCSS',
+      'Implemented responsive layouts and UI components',
+      'Integrated frontend with backend API'
+    ],
+    images: [
+      '/CP1.png',
+      '/CP2.png',
+      '/CP3.png',
+    ],
+    duration: 'On-going',
+    team: '3 developers (1 Backend, 1 Frontend, 1 Project Manager)',
+    client: 'Durich Agro Persada',
+    status: 'In Progress',
+    liveUrl: 'https://github.com/Farras8/durich-cp-be.git',
+    codeUrl: 'https://github.com/Farras8/durich-cp-fe.git',
+    rank: 'A-Rank',
+    completionDate: 'In Progress'
+  },
+  {
     "id": "dsimfoniku-009",
     "title": "Project: Dsimfoniku",
     "subtitle": "Health Inspection Website for the Health Department",

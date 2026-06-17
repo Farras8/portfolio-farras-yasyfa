@@ -120,7 +120,18 @@ const Experience = () => {
           className="max-w-4xl mx-auto child-animate"
           style={{ transitionDelay: '200ms' }}
         >
-          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/10 hover:border-purple-500 transition-all duration-300">
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/10 hover:border-purple-500 transition-all duration-300 space-y-10">
+            <ExperienceItem
+              position="Fullstack Web Developer"
+              company="Durich Agro Persada - Internship"
+              period="Apr 2026 - Present"
+              responsibilities={[
+                "Developed and maintained internal web systems using Go (Gin framework) and Laravel as primary backend technologies.",
+                "Built and integrated RESTful APIs for various internal business processes and workflow automation.",
+                "Contributed to frontend development using Next.js for internal web interfaces.",
+                "Worked with PostgreSQL and MySQL databases across multiple projects."
+              ]}
+            />
             <ExperienceItem
               position="Fullstack Web Developer"
               company="Dinas Kesehatan Depok - Internship"
