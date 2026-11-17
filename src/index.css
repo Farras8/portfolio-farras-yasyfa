@@ -279,6 +279,11 @@ nav a[aria-current] {
   background: radial-gradient(ellipse, #6939b62c, transparent 68%);
   pointer-events: none;
   transform: scale(1.4);
+  animation: shadow-aura 10s ease-in-out infinite;
+}
+@keyframes shadow-aura {
+  0%, 100% { transform: translate(-5px, 3px) scale(1.35); opacity: 0.65; }
+  50% { transform: translate(5px, -3px) scale(1.45); opacity: 1; }
 }
 .profile-panel {
   position: relative;
@@ -422,6 +427,18 @@ main > .hero {
     border-color 0.2s,
     transform 0.2s;
   min-width: 0;
+}
+.work-entry {
+  min-width: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+.work-entry-featured { grid-column: 1 / -1; }
+.work-entry-visible { opacity: 1; transform: none; }
+.work-entry > .work-card { height: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  .work-entry { opacity: 1; transform: none; }
 }
 .work-card:hover {
   border-color: #6275a4;

@@ -8,6 +8,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import { projects, type ProjectData } from "../Data/ProjectData";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 export function Panel({
   children,
   className = "",
@@ -189,6 +190,27 @@ const featuredIds = [
   "dsimfoniku-009",
   "jobmate-001",
 ];
+function ProjectReveal({
+  children,
+  index,
+  featured = false,
+}: {
+  children: ReactNode;
+  index: number;
+  featured?: boolean;
+}) {
+  const [ref, visible] = useScrollAnimation();
+  return (
+    <article
+      ref={ref}
+      className={`work-entry ${featured ? "work-entry-featured" : ""} ${visible ? "work-entry-visible" : ""}`}
+      style={{ transitionDelay: `${(index % 3) * 70}ms` }}
+    >
+      {children}
+    </article>
+  );
+}
+
 function ProjectCard({
   p,
   large = false,
@@ -269,12 +291,18 @@ export function Projects() {
       />
       <div className="work-grid">
         {featured.map((p, i) => (
-          <ProjectCard p={p} large={i === 0} key={p.id} />
+          <ProjectReveal key={p.id} index={i} featured={i === 0}>
+            <ProjectCard p={p} large={i === 0} />
+          </ProjectReveal>
         ))}
         {all &&
           projects
             .filter((p) => !featuredIds.includes(p.id))
-            .map((p) => <ProjectCard p={p} key={p.id} />)}
+            .map((p, i) => (
+              <ProjectReveal key={p.id} index={i + featured.length}>
+                <ProjectCard p={p} />
+              </ProjectReveal>
+            ))}
       </div>
       <div className="section-end">
         <span>
