@@ -1,5 +1,15 @@
 # React + TypeScript + Vite
 
+## Portfolio download
+
+`npm run build` generates `public/Portfolio - Muhammad Farras Yasyfa.docx`
+before Vite copies public assets into `dist`. Keep this generation step in the
+deployment build command: without the document, the SPA fallback serves
+`index.html` when a visitor clicks Download Portfolio.
+
+For local development, run `npm run generate:portfolio` before `npm run dev`.
+The generated document is ignored by Git and recreated on each production build.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

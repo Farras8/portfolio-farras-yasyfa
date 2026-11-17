@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run generate:portfolio && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate:portfolio": "node scripts/generate-portfolio.mjs"
