@@ -1,45 +1,51 @@
-// App.tsx
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Certificate from './components/Certificate';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Educations from './components/Educations';
-import ProjectDetailPage from './components/ProjectDetailPage';
-
-const App: React.FC = () => {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import { Home, Projects } from "./components/SystemUI";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Education from "./components/Educations";
+import Skills from "./components/Skills";
+import Certificate from "./components/Certificate";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import ProjectDetailPage from "./components/ProjectDetailPage";
+export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gradient-to-br from-gray-950/90 via-gray-900/90 to-black/90 text-gray-100 font-sans antialiased">
-        <Header />
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Header />
+      <main id="main">
         <Routes>
           <Route
             path="/"
             element={
               <>
                 <Home />
-                <About />
-                <Experience />
-                <Educations />
                 <Projects />
-                <Certificate />
+                <Experience />
+                <About />
                 <Skills />
+                <Education />
+                <Certificate />
                 <Contact />
-                <Footer />
               </>
             }
           />
           <Route path="/projects/:id" element={<ProjectDetailPage />} />
+          <Route
+            path="*"
+            element={
+              <div className="not-found">
+                <h1>Page not found.</h1>
+                <a href="/">Return home</a>
+              </div>
+            }
+          />
         </Routes>
-      </div>
+      </main>
+      <Footer />
     </BrowserRouter>
   );
-};
-
-export default App;
+}

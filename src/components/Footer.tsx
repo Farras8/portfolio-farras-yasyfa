@@ -1,61 +1,24 @@
-// Footer.tsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-
-// Komponen SocialIcons (Self-contained)
-const SocialIcons: React.FC<{ className?: string }> = ({ className = '' }) => (
-  <div className={`flex justify-center space-x-6 ${className}`}>
-    <a
-      href="https://github.com/Farras8"
-      aria-label="Github"
-      className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300"
-    >
-      <FaGithub size={24} />
-    </a>
-    <a
-      href="https://www.linkedin.com/in/muhammad-farras-yasyfa-89a0b12a6"
-      aria-label="LinkedIn"
-      className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300"
-    >
-      <FaLinkedin size={24} />
-    </a>
-    <a
-      href="https://www.instagram.com/farrasyasyfa/"
-      aria-label="Instagram"
-      className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all duration-300"
-    >
-      <FaInstagram size={24} />
-    </a>
-  </div>
-);
-
-const Footer = () => (
-  <>
-    <style>{`.font-orbitron { font-family: 'Orbitron', sans-serif; }`}</style>
-    <footer className="bg-gray-900 text-white py-8 border-t border-gray-800">
-      <div className="container mx-auto px-6 text-center">
-        <Link
-          to="/"
-          onClick={(e) => {
-            e.preventDefault();
-            document.getElementById('home')?.scrollIntoView({
-              behavior: 'smooth',
-            });
-          }}
-          className="text-xl font-orbitron font-bold mb-4 inline-block text-gray-200 hover:text-white"
-        >
-          FARRAS
-        </Link>
-        <div className="mb-6">
-          <SocialIcons />
-        </div>
-        <p className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} Muhammad Farras. All rights reserved.
-        </p>
-      </div>
+import { Link } from "react-router-dom";
+export default function Footer() {
+  return (
+    <footer className="system-footer">
+      <Link to="/#home" className="brand">
+        FARRAS<span className="accent">.</span>
+      </Link>
+      <span>� {new Date().getFullYear()} Muhammad Farras Yasyfa</span>
+      <button
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+              .matches
+              ? "instant"
+              : "smooth",
+          })
+        }
+      >
+        BACK TO TOP
+      </button>
     </footer>
-  </>
-);
-
-export default Footer;
+  );
+}
