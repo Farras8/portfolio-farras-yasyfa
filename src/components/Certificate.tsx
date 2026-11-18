@@ -30,7 +30,7 @@ const Certificate = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {certificatesToShow.map((cert, i) => (
               <div
-                key={i}
+                key={cert.name}
                 className="child-animate"
                 style={{ transitionDelay: `${200 + i * 100}ms` }}
               >
@@ -40,7 +40,7 @@ const Certificate = () => {
                       loading="lazy"
                       src={cert.previewImage}
                       alt={cert.name}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 object-contain"
                     />
                   </div>
                   <div className="p-6 flex-grow flex flex-col">
@@ -51,15 +51,20 @@ const Certificate = () => {
                       {`Achieved: ${cert.yearAchieve}${cert.yearEnd ? ` - Valid Until: ${cert.yearEnd}` : ""}`}
                     </p>
                     {cert.credentialId && (
-                      <p className="text-xs text-blue-400 mt-4 font-mono bg-gray-900/50 px-2 py-1 rounded w-fit">
+                      <p className="text-xs text-blue-400 mt-4 font-mono bg-gray-900/50 px-2 py-1 rounded w-fit max-w-full break-words">
                         {cert.credentialId}
                       </p>
                     )}
-                    <div className="mt-auto pt-4 border-t border-gray-700 mt-4">
-                      <Button href={cert.url} className="w-full !py-2 !text-sm">
-                        View Credential
-                      </Button>
-                    </div>
+                    {cert.url.trim() && (
+                      <div className="mt-auto pt-4 border-t border-gray-700 mt-4">
+                        <Button
+                          href={cert.url}
+                          className="w-full !py-2 !text-sm"
+                        >
+                          View Credential
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </Card>
               </div>

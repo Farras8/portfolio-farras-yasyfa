@@ -32,10 +32,9 @@ const About = () => (
             Crafting Code, Building Futures.
           </h3>
           <p>
-            I'm Muhammad Farras Yasyfa, an undergraduate Informatics Engineering
-            student at Politeknik Negeri Jakarta. I enjoy connecting intuitive
-            frontend experiences with reliable backend systems and cloud
-            infrastructure.
+            I'm Muhammad Farras Yasyfa, an Informatics Engineering graduate from
+            Politeknik Negeri Jakarta. I enjoy connecting intuitive frontend
+            experiences with reliable backend systems and cloud infrastructure.
           </p>
           <p>
             Every project is an opportunity to learn, refine my craft, and turn

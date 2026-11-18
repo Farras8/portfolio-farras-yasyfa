@@ -11,14 +11,22 @@ const Skills = () => {
       "HTML5 & CSS3",
       "Tailwind CSS",
     ],
-    Backend: ["Golang", "Node.js", "Express.js", "Python", "PHP", "Laravel"],
+    Backend: [
+      "Golang",
+      "Node.js",
+      "Express.js",
+      "ASP.NET",
+      "Python",
+      "PHP",
+      "Laravel",
+    ],
     Database: ["MySQL", "Firebase", "PostgreSQL"],
-    "Tools & Mobile": [
+    "Tools": [
       "Git & GitHub",
       "Docker",
+      "Google Cloud Run",
       "Figma",
-      "Microsoft Office",
-      "Kotlin (Mobile)",
+      "Microsoft Office"
     ],
   };
   return (

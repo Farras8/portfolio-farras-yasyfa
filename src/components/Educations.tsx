@@ -49,10 +49,10 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 const Education = () => {
   const educationHistory = [
     {
-      degree: "Undergraduate Student of Informatics Engineering",
+      degree: "Graduate in Informatics Engineering",
       institution: "State Polytechnic of Jakarta",
-      years: "Aug 2022 - Present",
-      gpa: "3.69",
+      years: "Aug 2022 - Sep 2026",
+      gpa: "3.7",
     },
     {
       degree: "Associate degree, Informatics Engineering",

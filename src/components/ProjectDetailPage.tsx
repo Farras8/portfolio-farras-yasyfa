@@ -8,7 +8,7 @@ import {
   Github,
 } from "lucide-react";
 import { projects, type ProjectData } from "../Data/ProjectData";
-import { Panel } from "./SystemUI";
+import { Panel, ProjectOverview } from "./SystemUI";
 const valid = (url: string) => /^https?:\/\//.test(url);
 function Detail({ project: p }: { project: ProjectData }) {
   const [image, setImage] = useState(0);
@@ -33,39 +33,45 @@ function Detail({ project: p }: { project: ProjectData }) {
             "This project is currently under maintenance."}
         </p>
       )}
-      <Panel className="detail-gallery">
-        <div>
-          {p.images.length ? (
-            <img
-              src={p.images[image]}
-              alt={`${p.title} screenshot ${image + 1}`}
-            />
-          ) : (
-            <p>No screenshots available.</p>
-          )}
-        </div>
-        {p.images.length > 1 && (
-          <div className="gallery-controls">
-            <button
-              aria-label="Previous screenshot"
-              onClick={() =>
-                setImage((image - 1 + p.images.length) % p.images.length)
-              }
-            >
-              <ChevronLeft />
-            </button>
-            <span aria-live="polite">
-              {image + 1} / {p.images.length}
-            </span>
-            <button
-              aria-label="Next screenshot"
-              onClick={() => setImage((image + 1) % p.images.length)}
-            >
-              <ChevronRight />
-            </button>
+      {p.images.length ? (
+        <Panel className="detail-gallery">
+          <div>
+            {p.images.length ? (
+              <img
+                src={p.images[image]}
+                alt={`${p.title} screenshot ${image + 1}`}
+              />
+            ) : (
+              <p>No screenshots available.</p>
+            )}
           </div>
-        )}
-      </Panel>
+          {p.images.length > 1 && (
+            <div className="gallery-controls">
+              <button
+                aria-label="Previous screenshot"
+                onClick={() =>
+                  setImage((image - 1 + p.images.length) % p.images.length)
+                }
+              >
+                <ChevronLeft />
+              </button>
+              <span aria-live="polite">
+                {image + 1} / {p.images.length}
+              </span>
+              <button
+                aria-label="Next screenshot"
+                onClick={() => setImage((image + 1) % p.images.length)}
+              >
+                <ChevronRight />
+              </button>
+            </div>
+          )}
+        </Panel>
+      ) : (
+        <Panel>
+          <ProjectOverview project={p} />
+        </Panel>
+      )}
       <div className="hero-actions detail-actions">
         {valid(p.liveUrl) ? (
           <a
@@ -136,6 +142,7 @@ function Detail({ project: p }: { project: ProjectData }) {
                 ["Team", p.team],
                 ["Status", p.status],
                 ["Completion", p.completionDate],
+                ...(p.role ? [["My Role", p.role]] : []),
               ].map(([label, value]) => (
                 <div key={label}>
                   <dt>{label}</dt>

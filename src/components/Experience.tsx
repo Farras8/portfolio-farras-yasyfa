@@ -70,6 +70,17 @@ const Experience = () => {
         >
           <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/10 hover:border-purple-500 transition-all duration-300 space-y-10">
             <ExperienceItem
+              position="Web Developer"
+              company="Pertamina Retail - Internship"
+              period="Sep 2026 - Present"
+              responsibilities={[
+                "Developed and maintained web applications, primarily focusing on backend development with Express.js and ASP.NET.",
+                "Built backend APIs for the Nitrogen Operations Dashboard and provided selected frontend fixes and integration support.",
+                "Worked with PostgreSQL to support operational analytics and transaction reporting.",
+                "Deployed web applications to Google Cloud Platform using Cloud Run.",
+              ]}
+            />
+            <ExperienceItem
               position="Fullstack Web Developer"
               company="Durich Agro Persada - Internship"
               period="Apr 2026 - Present"
@@ -77,6 +88,8 @@ const Experience = () => {
                 "Developed and maintained internal web systems using Go (Gin framework) and Laravel as primary backend technologies.",
                 "Built and integrated RESTful APIs for various internal business processes and workflow automation.",
                 "Contributed to frontend development using Next.js for internal web interfaces.",
+                "Developed full-stack fund management workflows in Palm Fund Manager using Laravel, Vue.js, and Inertia.js.",
+                "Developed the DSmart and Sensus API modules in collaboration with an external vendor, with targeted frontend support.",
                 "Worked with PostgreSQL and MySQL databases across multiple projects.",
               ]}
             />

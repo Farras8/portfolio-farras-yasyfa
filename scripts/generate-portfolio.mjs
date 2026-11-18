@@ -20,6 +20,90 @@ import { extname } from 'path';
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
 const projects = [
+{
+  "id": "dsmart-013",
+  "title": "DSmart",
+  "subtitle": "Warehouse Operations & Plantation Census Modules",
+  "description": "Internal warehouse and plantation census workflows. Developed the DSmart and Sensus APIs within a shared vendor-developed backend, with targeted frontend fixes and integration support.",
+  "longDescription": "DSmart supports internal warehouse operations and plantation census workflows at Durich Agro Persada. Its workflows cover produce intake, basket tracking, shipments, warehouse reconciliation, and census records for field assets, growth phases, fruit diseases, and maintenance observations. The project is a collaboration with an external vendor: my backend contribution is limited to the DSmart and Sensus modules within durich-api. Other modules in that shared backend belong to the vendor. I also contributed targeted fixes and API integration support in dsmart-app-frontend rather than owning the entire frontend.",
+  "technologies": [
+    "Go",
+    "Gin",
+    "GORM",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+  "role": "Backend Developer with Frontend Support",
+  "features": [
+    "Warehouse intake, basket tracking, and shipment workflows",
+    "Warehouse reconciliation and operational reporting",
+    "Plantation asset census, phase tracking, and fruit disease records",
+    "Maintenance observations, work items, and census history",
+    "Module-specific permissions and role-aware API access"
+  ],
+  "myJobDesk": [
+    "Developed the DSmart and Sensus API modules in durich-api in collaboration with an external vendor.",
+    "Implemented warehouse workflow endpoints for intake, baskets, shipments, and reconciliation.",
+    "Built census endpoints for asset records, phases, fruit disease observations, and maintenance workflows.",
+    "Worked on module-specific validation, permission checks, and data access using Go, Gin, and GORM.",
+    "Provided targeted frontend fixes and API integration support in the Next.js dsmart-app-frontend application.",
+    "Kept my contribution scoped to DSmart and Sensus; other backend modules were delivered by the vendor."
+  ],
+  "images": [],
+  "duration": "Ongoing",
+  "team": "Internal development team collaborating with an external vendor",
+  "client": "Durich Agro Persada",
+  "status": "In Progress",
+  "liveUrl": "",
+  "codeUrl": "",
+  "completionDate": "In Progress",
+  "period": "Ongoing",
+  "image": null
+},
+{
+  "id": "nitrogen-dashboard-014",
+  "title": "Nitrogen Operations Dashboard",
+  "subtitle": "Nitrogen Service Analytics & Transaction Monitoring",
+  "description": "An internal Pertamina Retail dashboard for nitrogen service revenue, outlet performance, and POS transactions. Developed the Express.js backend and contributed selected frontend fixes and integrations.",
+  "longDescription": "The Nitrogen Operations Dashboard helps Pertamina Retail review nitrogen service performance across outlets using operational POS data. The application brings together revenue trends, service mix, hourly performance, payment methods, outlet comparisons, and a searchable transaction ledger with CSV export. My primary responsibility is the Express.js and PostgreSQL backend, including analytics APIs, data queries, authentication integration, and transaction exports. I also contributed selected improvements and integration work to the Vue 3 frontend.",
+  "technologies": [
+    "Express.js",
+    "Node.js",
+    "PostgreSQL",
+    "Vue.js 3",
+    "TypeScript",
+    "Pinia",
+    "ECharts",
+    "Vite"
+  ],
+  "role": "Backend Developer with Frontend Support",
+  "features": [
+    "Revenue summaries, service mix, hourly performance, and payment method analytics",
+    "Outlet comparisons and service performance views",
+    "Filtered POS transaction ledger, transaction details, and CSV export",
+    "Authentication integration and session-protected analytics APIs",
+    "Interactive dashboard charts connected to backend data"
+  ],
+  "myJobDesk": [
+    "Developed the backend using Express.js and PostgreSQL, with additional frontend support.",
+    "Built analytics endpoints and SQL queries for revenue trends, services, payment methods, and outlet performance.",
+    "Implemented filtered transaction listing, transaction details, and CSV export.",
+    "Worked on authentication integration, session-protected routes, request validation, and API error handling.",
+    "Contributed selected Vue 3 frontend fixes and API integration improvements."
+  ],
+  "images": [],
+  "duration": "Ongoing",
+  "team": "Internal development team",
+  "client": "Pertamina Retail",
+  "status": "In Progress",
+  "liveUrl": "",
+  "codeUrl": "",
+  "completionDate": "In Progress",
+  "period": "Ongoing",
+  "image": null
+},
   {
     title: 'Finance Form System',
     subtitle: 'Internal Finance Workflow System',
@@ -50,34 +134,56 @@ const projects = [
     image: 'public/Finance1.png',
   },
   {
-    title: 'Palm Fund Manager',
-    subtitle: 'Palm Oil Cash Flow & Profit Sharing System',
-    period: 'Apr 2026 - Present',
-    client: 'Durich Agro Persada',
-    team: '3 developers (1 Backend, 1 Frontend, 1 Project Manager)',
-    technologies: ['Laravel', 'PHP', 'Vue.js 3', 'Inertia.js', 'TailwindCSS', 'MySQL', 'PostgreSQL', 'Vite'],
-    longDescription:
-      'Palm Fund Manager is a web-based financial management system developed for internal use at a palm oil plantation company. It centralizes the recording of all operational transactions (harvest, fertilizer, salaries, maintenance) and automates the calculation and allocation of profit sharing to various stakeholders. The system provides real-time financial reporting across daily, weekly, and monthly periods, with multi-role access ensuring each stakeholder level sees only relevant data.',
-    features: [
-      'Operational cash flow recording for plantation transactions',
-      'Automated profit sharing calculation and stakeholder allocation',
-      'Real-time financial reporting (daily, weekly, monthly)',
-      'Multi-role access control (Admin, Stakeholder, SuperAdmin)',
-      'Transaction categorization (harvest, fertilizer, salaries, maintenance)',
-      'Financial dashboard with summary and analytics',
-    ],
-    myJobDesk: [
-      'Developed backend using Laravel 12 MVC architecture',
-      'Built SPA frontend using Vue.js 3 with Inertia.js',
-      'Implemented multi-role authentication and access control system',
-      'Designed database schema and Eloquent ORM models',
-      'Created automated profit sharing calculation logic',
-      'Built financial reporting and dashboard features',
-    ],
-    liveUrl: null,
-    codeUrl: 'https://github.com/IT-DURICH/palm-fund-manager.git',
-    image: 'public/Palm1.png',
-  },
+  "id": "palm-fund-manager-011",
+  "title": "Palm Fund Manager",
+  "subtitle": "Investment Fund, Wallet & Profit Distribution System",
+  "description": "Internal fund management platform for recording deposits, managing wallets and withdrawals, and distributing investment returns through tier-based rules. Contributed as a full-stack developer across Laravel APIs and Vue interfaces.",
+  "longDescription": "Palm Fund Manager centralizes operational deposits and investment fund management for Durich Agro Persada. The platform connects field administrators, super administrators, and shareholders through role-specific workflows. It supports group-based contributions, automatic closing and tier-based allocations, withdrawal approvals with transfer evidence, multi-currency wallets, and periodic realization of shareholder returns after expense deductions. My role covers full-stack development, from Laravel business logic and APIs to the Vue 3 and Inertia.js interfaces used to manage and review these workflows.",
+  "technologies": [
+    "Laravel 12",
+    "PHP",
+    "Vue.js 3",
+    "Inertia.js",
+    "Tailwind CSS",
+    "Laravel Sanctum",
+    "MySQL",
+    "PostgreSQL",
+    "Vite",
+    "Chart.js",
+    "Web Push"
+  ],
+  "features": [
+    "Role-specific dashboards for super administrators, field administrators, and shareholders",
+    "Group contributions, operational deposits, and automatic closing with tier-based allocations",
+    "Withdrawal requests, transfer evidence uploads, approval, and transaction-linked exchange rates",
+    "Multi-currency wallets, balance tracking, and transfer history",
+    "Periodic realization of returns, expense deductions, and shareholder wallet distributions",
+    "Audit trails, financial reports, and notifications"
+  ],
+  "myJobDesk": [
+    "Developed full-stack workflows using Laravel 12 APIs and Vue 3 with Inertia.js.",
+    "Implemented deposit recording, group management, automatic closing, and tier-based distribution logic.",
+    "Built withdrawal, proof-of-transfer, and multi-currency wallet workflows.",
+    "Developed realization processing, expense deductions, and shareholder balance tracking.",
+    "Built role-specific dashboards and financial reporting interfaces connected to backend APIs.",
+    "Maintained authentication, role-based access, audit trails, and notifications."
+  ],
+  "images": [
+    "/Palm1.png",
+    "/Palm2.png",
+    "/Palm3.png"
+  ],
+  "duration": "On-going",
+  "team": "3 developers (1 Backend, 1 Frontend, 1 Project Manager)",
+  "client": "Durich Agro Persada",
+  "status": "In Progress",
+  "liveUrl": "#",
+  "codeUrl": "https://github.com/IT-DURICH/palm-fund-manager.git",
+  "completionDate": "In Progress",
+  "role": "Full-Stack Developer",
+  "period": "Apr 2026 - Present",
+  "image": "public/Palm1.png"
+},
   {
     title: 'Durich Company Profile',
     subtitle: 'Company Profile Website',
@@ -355,7 +461,8 @@ function buildProjectPage(project, isLast) {
   const blocks = [];
 
   // ── Full-width image at top ──
-  const imgBuf = readFileSync(project.image);
+  if (project.image) {
+const imgBuf = readFileSync(project.image);
   blocks.push(
     new Paragraph({
       spacing: { before: 0, after: 0 },
@@ -368,6 +475,7 @@ function buildProjectPage(project, isLast) {
       ],
     })
   );
+  }
 
   // ── Title block below image ──
   blocks.push(

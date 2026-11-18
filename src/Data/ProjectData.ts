@@ -15,18 +15,99 @@ export interface ProjectData {
   status: string;
   liveUrl: string;
   codeUrl: string;
-  rank: 'S-Rank' | 'A-Rank' | 'B-Rank' | 'C-Rank';
   completionDate: string;
   maintenanceMessage?: string;
+  role?: string;
 }
 
 export const projects: ProjectData[] = [
+{
+  "id": "dsmart-013",
+  "title": "Project: DSmart",
+  "subtitle": "Warehouse Operations & Plantation Census Modules",
+  "description": "Warehouse and census workflows. Built DSmart/Sensus APIs with a vendor and supported the frontend.",
+  "longDescription": "DSmart supports internal warehouse operations and plantation census workflows at Durich Agro Persada. Its workflows cover produce intake, basket tracking, shipments, warehouse reconciliation, and census records for field assets, growth phases, fruit diseases, and maintenance observations. The project is a collaboration with an external vendor: my backend contribution is limited to the DSmart and Sensus modules within durich-api. Other modules in that shared backend belong to the vendor. I also contributed targeted fixes and API integration support in dsmart-app-frontend rather than owning the entire frontend.",
+  "technologies": [
+    "Go",
+    "Gin",
+    "GORM",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+  "role": "Backend Developer with Frontend Support",
+  "features": [
+    "Warehouse intake, basket tracking, and shipment workflows",
+    "Warehouse reconciliation and operational reporting",
+    "Plantation asset census, phase tracking, and fruit disease records",
+    "Maintenance observations, work items, and census history",
+    "Module-specific permissions and role-aware API access"
+  ],
+  "myJobDesk": [
+    "Developed the DSmart and Sensus API modules in durich-api in collaboration with an external vendor.",
+    "Implemented warehouse workflow endpoints for intake, baskets, shipments, and reconciliation.",
+    "Built census endpoints for asset records, phases, fruit disease observations, and maintenance workflows.",
+    "Worked on module-specific validation, permission checks, and data access using Go, Gin, and GORM.",
+    "Provided targeted frontend fixes and API integration support in the Next.js dsmart-app-frontend application.",
+    "Kept my contribution scoped to DSmart and Sensus; other backend modules were delivered by the vendor."
+  ],
+  "images": [],
+  "duration": "Ongoing",
+  "team": "Internal development team collaborating with an external vendor",
+  "client": "Durich Agro Persada",
+  "status": "In Progress",
+  "liveUrl": "",
+  "codeUrl": "",
+  "completionDate": "In Progress"
+},
+{
+  "id": "nitrogen-dashboard-014",
+  "title": "Project: Nitrogen Operations Dashboard",
+  "subtitle": "Nitrogen Service Analytics & Transaction Monitoring",
+  "description": "Nitrogen service analytics and POS reporting. Built Express.js APIs and supported the frontend.",
+  "longDescription": "The Nitrogen Operations Dashboard helps Pertamina Retail review nitrogen service performance across outlets using operational POS data. The application brings together revenue trends, service mix, hourly performance, payment methods, outlet comparisons, and a searchable transaction ledger with CSV export. My primary responsibility is the Express.js and PostgreSQL backend, including analytics APIs, data queries, authentication integration, and transaction exports. I also contributed selected improvements and integration work to the Vue 3 frontend.",
+  "technologies": [
+    "Express.js",
+    "Node.js",
+    "PostgreSQL",
+    "Vue.js 3",
+    "TypeScript",
+    "Pinia",
+    "ECharts",
+    "Vite"
+  ],
+  "role": "Backend Developer with Frontend Support",
+  "features": [
+    "Revenue summaries, service mix, hourly performance, and payment method analytics",
+    "Outlet comparisons and service performance views",
+    "Filtered POS transaction ledger, transaction details, and CSV export",
+    "Authentication integration and session-protected analytics APIs",
+    "Interactive dashboard charts connected to backend data"
+  ],
+  "myJobDesk": [
+    "Developed the backend using Express.js and PostgreSQL, with additional frontend support.",
+    "Built analytics endpoints and SQL queries for revenue trends, services, payment methods, and outlet performance.",
+    "Implemented filtered transaction listing, transaction details, and CSV export.",
+    "Worked on authentication integration, session-protected routes, request validation, and API error handling.",
+    "Contributed selected Vue 3 frontend fixes and API integration improvements."
+  ],
+  "images": [],
+  "duration": "Ongoing",
+  "team": "Internal development team",
+  "client": "Pertamina Retail",
+  "status": "In Progress",
+  "liveUrl": "",
+  "codeUrl": "",
+  "completionDate": "In Progress"
+},
   {
     id: 'finance-form-system-010',
+    role: "Backend Developer with Frontend Support",
     title: 'Project: Finance Form System',
     subtitle: 'Internal Finance Workflow System',
     description:
-      'Internal web system for automating company finance workflows including LPJ (accountability reports), advance payment requests, approval processes, and digital document management.',
+      "Finance approvals and document workflows. Built backend APIs and supported the frontend.",
     longDescription:
       'Finance Form System is an internal web application built to digitize and streamline company finance workflows. It handles the full lifecycle of financial documents including LPJ (accountability reports), advance payment submissions, and multi-level approval processes. The system supports role-based access control with JWT authentication and a layered permission middleware, ensuring each employee only accesses relevant financial data. Built for a team of 35 employees, the application prioritizes simplicity and reliability over enterprise complexity.',
     technologies: [
@@ -67,63 +148,64 @@ export const projects: ProjectData[] = [
     status: 'In Progress',
     liveUrl: 'https://internalf.durich.id/',
     codeUrl: 'https://github.com/IT-DURICH/finance-form-system.git',
-    rank: 'S-Rank',
     completionDate: 'In Progress'
   },
   {
-    id: 'palm-fund-manager-011',
-    title: 'Project: Palm Fund Manager',
-    subtitle: 'Palm Oil Cash Flow & Profit Sharing System',
-    description:
-      'Internal web application for managing operational cash flow of a palm oil plantation and facilitating transparent profit sharing calculation and distribution among stakeholders.',
-    longDescription:
-      'Palm Fund Manager is a web-based financial management system developed for internal use at a palm oil plantation company. It centralizes the recording of all operational transactions (harvest, fertilizer, salaries, maintenance) and automates the calculation and allocation of profit sharing to various stakeholders. The system provides real-time financial reporting across daily, weekly, and monthly periods, with multi-role access ensuring each stakeholder level sees only relevant data.',
-    technologies: [
-      'Laravel',
-      'PHP',
-      'Vue.js 3',
-      'Inertia.js',
-      'TailwindCSS',
-      'MySQL',
-      'PostgreSQL',
-      'Vite'
-    ],
-    features: [
-      'Operational cash flow recording for plantation transactions',
-      'Automated profit sharing calculation and stakeholder allocation',
-      'Real-time financial reporting (daily, weekly, monthly)',
-      'Multi-role access control (Admin, Stakeholder, SuperAdmin)',
-      'Transaction categorization (harvest, fertilizer, salaries, maintenance)',
-      'Financial dashboard with summary and analytics'
-    ],
-    myJobDesk: [
-      'Developed backend using Laravel 12 MVC architecture',
-      'Built SPA frontend using Vue.js 3 with Inertia.js',
-      'Implemented multi-role authentication and access control system',
-      'Designed database schema and Eloquent ORM models',
-      'Created automated profit sharing calculation logic',
-      'Built financial reporting and dashboard features'
-    ],
-    images: [
-      '/Palm1.png',
-      '/Palm2.png',
-      '/Palm3.png',
-    ],
-    duration: 'On-going',
-    team: '3 developers (1 Backend, 1 Frontend, 1 Project Manager)',
-    client: 'Durich Agro Persada',
-    status: 'In Progress',
-    liveUrl: '#',
-    codeUrl: 'https://github.com/IT-DURICH/palm-fund-manager.git',
-    rank: 'S-Rank',
-    completionDate: 'In Progress'
-  },
+  "id": "palm-fund-manager-011",
+  "title": "Project: Palm Fund Manager",
+  "subtitle": "Investment Fund, Wallet & Profit Distribution System",
+  "description": "Deposits, wallets, and profit sharing. Built Laravel APIs and Vue interfaces.",
+  "longDescription": "Palm Fund Manager centralizes operational deposits and investment fund management for Durich Agro Persada. The platform connects field administrators, super administrators, and shareholders through role-specific workflows. It supports group-based contributions, automatic closing and tier-based allocations, withdrawal approvals with transfer evidence, multi-currency wallets, and periodic realization of shareholder returns after expense deductions. My role covers full-stack development, from Laravel business logic and APIs to the Vue 3 and Inertia.js interfaces used to manage and review these workflows.",
+  "technologies": [
+    "Laravel 12",
+    "PHP",
+    "Vue.js 3",
+    "Inertia.js",
+    "Tailwind CSS",
+    "Laravel Sanctum",
+    "MySQL",
+    "PostgreSQL",
+    "Vite",
+    "Chart.js",
+    "Web Push"
+  ],
+  "features": [
+    "Role-specific dashboards for super administrators, field administrators, and shareholders",
+    "Group contributions, operational deposits, and automatic closing with tier-based allocations",
+    "Withdrawal requests, transfer evidence uploads, approval, and transaction-linked exchange rates",
+    "Multi-currency wallets, balance tracking, and transfer history",
+    "Periodic realization of returns, expense deductions, and shareholder wallet distributions",
+    "Audit trails, financial reports, and notifications"
+  ],
+  "myJobDesk": [
+    "Developed full-stack workflows using Laravel 12 APIs and Vue 3 with Inertia.js.",
+    "Implemented deposit recording, group management, automatic closing, and tier-based distribution logic.",
+    "Built withdrawal, proof-of-transfer, and multi-currency wallet workflows.",
+    "Developed realization processing, expense deductions, and shareholder balance tracking.",
+    "Built role-specific dashboards and financial reporting interfaces connected to backend APIs.",
+    "Maintained authentication, role-based access, audit trails, and notifications."
+  ],
+  "images": [
+    "/Palm1.png",
+    "/Palm2.png",
+    "/Palm3.png"
+  ],
+  "duration": "On-going",
+  "team": "3 developers (1 Backend, 1 Frontend, 1 Project Manager)",
+  "client": "Durich Agro Persada",
+  "status": "In Progress",
+  "liveUrl": "#",
+  "codeUrl": "https://github.com/IT-DURICH/palm-fund-manager.git",
+  "completionDate": "In Progress",
+  "role": "Full-Stack Developer"
+},
   {
     id: 'durich-cp-012',
+    role: "Full-Stack Developer",
     title: 'Project: Durich Company Profile',
     subtitle: 'Company Profile Website',
     description:
-      'Official company profile website for Durich Agro Persada, presenting the company\'s vision, mission, services, and business portfolio in a modern and professional web presence.',
+      "A company profile for Durich Agro Persada. Built the Go backend and Next.js frontend.",
     longDescription:
       'Durich Company Profile is the official web presence for Durich Agro Persada, a palm oil plantation company. The website showcases the company\'s profile, vision and mission, core services, and business information in a clean and professional design. Built as a full-stack application with a separate backend and frontend, the site serves as the digital front door for the company.',
     technologies: [
@@ -155,16 +237,16 @@ export const projects: ProjectData[] = [
     team: '3 developers (1 Backend, 1 Frontend, 1 Project Manager)',
     client: 'Durich Agro Persada',
     status: 'In Progress',
-    liveUrl: 'https://github.com/Farras8/durich-cp-be.git',
+    liveUrl: 'https://duree.id/',
     codeUrl: 'https://github.com/Farras8/durich-cp-fe.git',
-    rank: 'A-Rank',
     completionDate: 'In Progress'
   },
   {
     "id": "dsimfoniku-009",
+    role: "Full-Stack Developer",
     "title": "Project: Dsimfoniku",
     "subtitle": "Health Inspection Website for the Health Department",
-    "description": "Dsimfoniku is a Laravel-based web application designed for the Health Department and community health centers (Puskesmas) to conduct and manage environmental health inspections through structured digital forms.",
+    "description": "Digital health inspection forms. Developed features, improved search, and maintained the application.",
     "longDescription": "Dsimfoniku is a web-based health inspection system that enables the Health Department and community health centers (Puskesmas) to digitize the process of recording and reporting environmental health inspections. The platform provides structured forms for various types of inspections and supports full data management with CRUD operations, duplication, advanced search, filtering, and inspection history export. Super Admin (Health Department) can manage all inspection data and Admin accounts, while Admin (Puskesmas) can only access their own inspection records. The system also includes profile management, editable letterheads for official inspection reports, and PDF generation for inspection results with customized headers. This makes the reporting process more efficient, standardized, and professional.",
     "technologies": [
     "Laravel",
@@ -207,15 +289,15 @@ export const projects: ProjectData[] = [
     "status": "In Progress",
     "liveUrl": "https://dsimfoniku.com/",
     "codeUrl": "https://github.com/depokitdinkes-netizen/dsimfoniku_dinkes.git",
-    "rank": "S-Rank",
     "completionDate": "In Progress"
   },
   {
     id: 'jobmate-001',
+    role: "Full-Stack Developer",
     title: 'Project: JobMate',
     subtitle: 'Responsive Website for Job Search',
     description:
-      'JobMate is a modern job search platform built with React TypeScript and Tailwind CSS, featuring personalized job recommendations and AI chatbot support.',
+      "Job search with AI recommendations. Built APIs, frontend features, and cloud integrations.",
     longDescription:
       'JobMate is a responsive and intelligent job search website designed to help users find suitable employment opportunities easily. The platform allows users to edit their profiles—including experience, education, and portfolio—bookmark job listings, and search for job vacancies or companies. It also integrates a Gemini 2.0 Flash-based chatbot to assist users in navigating the platform and finding job matches. A key feature of JobMate is the personalized job recommendation engine powered by a machine learning model. The backend is built using Express.js and deployed via Cloud Functions, while the recommendation and chatbot models are served using Flask APIs hosted on Cloud Run. The project is fully deployed to Vercel for seamless access.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Express.js', 'Python', 'Cloud Run', 'Firebase', 'Cloud Storage'],
@@ -246,14 +328,14 @@ export const projects: ProjectData[] = [
     status: 'Completed but still improving',
     liveUrl: 'https://job-mate-six.vercel.app/',
     codeUrl: 'https://github.com/Farras8/JobMate.git',
-    rank: 'S-Rank',
     completionDate: '2025-07-28'
   },
   {
     id: 'Harmoni Alam-008',
+    role: "Full-Stack Developer",
     title: 'Project: HarmoniAlam',
     subtitle: 'Environmental Volunteer Platform',
-    description: 'Comprehensive digital platform connecting volunteers with environmental event organizers across Indonesia, featuring multi-role authentication, event management, content publishing, and community engagement features.',
+    description: "A platform connecting volunteers and event organizers. Built backend services and web interfaces.",
 
     longDescription: 'HarmoniAlam is a revolutionary web platform designed to bridge the gap between environmental volunteers and event organizers in Indonesia. The platform features a sophisticated three-tier user system (Volunteers, Organizers, and Admins) with comprehensive role-based access control. Built with modern web technologies, it provides seamless event discovery, registration, content management, and community interaction features. The platform includes real-time email verification, dynamic content publishing, interactive mapping, bookmark functionality, and secure file storage integration with Google Cloud Services.',
 
@@ -341,15 +423,15 @@ export const projects: ProjectData[] = [
     status: 'Maintenance',
     liveUrl: 'https://harmonii-alam.vercel.app/',
     codeUrl: 'https://github.com/Farras8/HarmoniiAlam.git',
-    rank: 'A-Rank',
     completionDate: '2025-08-03',
     maintenanceMessage: 'Project ini sedang dalam maintenance karena GCP free trial telah berakhir. Sedang mencari hosting baru untuk API backend ',
   },
   {
     id: 'Portfolio-009',
+    role: "Frontend Developer",
     title: 'Project: Personal Portfolio Website',
     subtitle: 'Modern React Portfolio',
-    description: 'A modern, responsive personal portfolio website built with React, TypeScript, and Tailwind CSS, showcasing projects, skills, experience, and professional achievements with smooth animations and interactive features.',
+    description: "A responsive developer portfolio. Designed the interface and built reusable React components.",
 
     longDescription: 'This personal portfolio website represents a comprehensive showcase of my professional journey as a Full-Stack Web Developer. Built with modern web technologies, the site features a sleek, responsive design with smooth scroll animations, interactive components, and a professional layout. The portfolio includes dedicated sections for projects, skills, experience, education, certificates, and contact information. Each project is presented with detailed information, live demos, and source code links. The site implements modern UI/UX principles with a dark theme, gradient accents, and smooth transitions throughout.',
 
@@ -387,15 +469,15 @@ export const projects: ProjectData[] = [
     status: 'Completed',
     liveUrl: 'https://portfolio-farras-yasyfa.vercel.app/',
     codeUrl: 'https://github.com/Farras8/portfolio-farras-yasyfa.git',
-    rank: 'A-Rank',
     completionDate: '2025-07-15',
   },
   {
     id: 'sustainWise-002',
+    role: "Cloud Developer",
     title: 'Project: Sustain Wise',
     subtitle: 'Android Money Management App',
     description:
-      'SustainWise is a money management Android app built with Kotlin that helps users track their income and expenses, offering monthly financial insights and machine learning-based recommendations.',
+      "Income and expense tracking. Built Express.js APIs, Firebase data storage, and cloud deployment.",
     longDescription:
       'SustainWise is an Android application developed to assist users in managing their finances effectively. Built using Kotlin, the app enables users to perform CRUD operations on their income and expenses, providing monthly tracking through intuitive graphical charts. A machine learning model is integrated to analyze users\' monthly financial behavior and offer personalized financial recommendations. The backend services are powered by Express.js and deployed on Cloud Functions, while Firebase handles real-time data storage. The Android frontend consumes both the backend APIs and TensorFlow Lite model outputs to deliver a seamless experience.',
     technologies: ['Express.js', 'Kotlin', 'Cloud Functions', 'Cloud Storage', 'Firebase'],
@@ -421,15 +503,15 @@ export const projects: ProjectData[] = [
     status: 'Completed',
     liveUrl: '#',
     codeUrl: 'https://github.com/SustainWise',
-    rank: 'A-Rank',
     completionDate: '2024-12-10',
   },
   {
     id: 'FitMate-003',
+    role: "NLP Developer",
     title: 'Project: FitMate',
     subtitle: 'Android Diet Assistant App',
     description:
-      'FitMate is an Android-based diet assistant app that helps users track their daily calories, monitor weight goals, recognize food using computer vision, and receive nutrition guidance through an integrated chatbot.',
+      "A diet assistant with nutrition guidance. Built the IndoBERT chatbot and its cloud-hosted API.",
     longDescription:
       'FitMate is a smart diet assistant Android application designed to help users maintain their nutrition and health goals. It calculates daily calorie needs based on BMI, BMR, and TDEE using user data such as weight, height, age, gender, and activity level. Users can track their weight progress toward personal goals, and benefit from a food recognition feature powered by CNN-based computer vision. FitMate also includes a food recommendation engine based on association rules that suggest meals according to user preferences and common eating patterns. An IndoBERT-based NLP chatbot is fully integrated, providing conversational assistance for nutrition-related questions and guiding users across the app’s features.',
     technologies: ['Kotlin', 'Python', 'TensorFlow', 'Cloud Run', 'Cloud Storage'],
@@ -458,15 +540,15 @@ export const projects: ProjectData[] = [
     status: 'Completed',
     liveUrl: '#',
     codeUrl: 'https://github.com/2025-TI-CCIT-6A-Kelompok-5',
-    rank: 'A-Rank',
     completionDate: '2025-06-19',
   },
   {
     id: 'Ivasta-004',
+    role: "Full-Stack Developer",
     title: 'Project: PHP Native Dashboard Admin Website',
     subtitle: 'Dashboard Admin Website',
     description:
-      'Ivasta is a web-based admin dashboard built with native PHP for managing a pasta shop, featuring full product and category management, order tracking, and monthly sales analytics.',
+      "A pasta shop admin dashboard. Built product, order, and sales management using PHP and MySQL.",
     longDescription:
       'Ivasta is a super admin dashboard website developed using PHP Native and MySQL, designed for efficiently managing a pasta shop. The platform includes full CRUD functionality for product and category management, admin user management, order creation, and order history tracking. It also features monthly sales and revenue tracking visualized with graphical charts to help monitor business performance. This project was developed entirely as a solo endeavor, with a focus on building a functional and intuitive admin interface without using frameworks.',
     technologies: ['PHP', 'MYSQL'],
@@ -495,15 +577,15 @@ export const projects: ProjectData[] = [
     status: 'Completed',
     liveUrl: '#',
     codeUrl: 'https://github.com/Farras8/PWL.git',
-    rank: 'B-Rank',
     completionDate: '2023-12-15',
   },
   {
     id: 'King Culinary-005',
+    role: "Frontend Developer",
     title: 'Project: Dashboard Super Admin King Culinary',
     subtitle: 'Dashboard Admin',
     description:
-      'King Culinary Admin Dashboard is a web-based super admin panel designed to manage users, comments, and recipes while providing real-time insights into platform activity.',
+      "Recipe platform administration. Built the dashboard and connected Firebase data and moderation tools.",
     longDescription:
       'The Dashboard Super Admin King Culinary is a dedicated admin interface for managing and monitoring the core aspects of the King Culinary platform. Built using HTML, CSS, JavaScript, Firebase, and deployed via Vercel, the dashboard enables super admins to view, create, and manage recipes; moderate user comments; and oversee user activity. It includes a summary dashboard for tracking total users, comments, and uploaded recipes in real time. This solo project was developed with a focus on simplicity, admin efficiency, and data visualization for quick insights.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Vercel', 'Firebase'],
@@ -530,15 +612,15 @@ export const projects: ProjectData[] = [
     status: 'Completed',
     liveUrl: 'https://dashboard-culinary.vercel.app/',
     codeUrl: 'https://github.com/Farras8/Dashboard-Culinary.git',
-    rank: 'A-Rank',
     completionDate: '2024-06-11',
   },
   {
     id: 'Mandiri-006',
+    role: "Mobile Developer",
     title: 'Project: Mandiri News',
     subtitle: 'Android News App',
     description:
-      'Mandiri News is a Kotlin-based Android app that delivers the latest news from a public News API, with category-based filtering and detailed news viewing.',
+      "A news reader with category filtering. Built the Kotlin app and integrated the News API.",
     longDescription:
       'Mandiri News is a mobile news application built using Kotlin for Android. It fetches and displays up-to-date news articles from a third-party News API. Users can browse general headlines, filter articles by categories such as technology, health, business, and entertainment, and read complete news details through a clean and responsive interface. Developed as a solo project, this app focuses on simplicity, smooth UX, and effective API integration for real-time news updates.',
     technologies: ['Kotlin'],
@@ -565,15 +647,15 @@ export const projects: ProjectData[] = [
     status: 'Completed',
     liveUrl: '#',
     codeUrl: 'https://github.com/Farras8/MandiriNews.git',
-    rank: 'B-Rank',
     completionDate: '2024-04-25',
   },
   {
     id: 'King Culinary-007',
+    role: "Mobile Developer",
     title: 'Project: King Culinary',
     subtitle: 'Android Recipe App',
     description:
-      'King Culinary is a Java-based Android app that allows users to explore, upload, and bookmark food recipes, featuring Firebase authentication and real-time data integration.',
+      "Recipe discovery, uploads, and bookmarks. Built the Java app with Firebase authentication and data.",
     longDescription:
       'King Culinary is a mobile recipe-sharing application built with Java for Android and powered by Firebase for authentication and real-time data storage. Users can register and log in securely using Firebase Auth, recover passwords, view recipes uploaded by both admins and other users, upload their own recipes, bookmark favorites, comment on others’ recipes, and manage their profiles. This project was developed independently with a focus on smooth user interaction, Firebase integration, and clean UI implementation.',
     technologies: ['Java', 'Firebase'],
@@ -607,7 +689,6 @@ export const projects: ProjectData[] = [
     status: 'Completed',
     liveUrl: 'https://drive.google.com/drive/folders/1g22u0L1POZ8BXnYNcrmwdVifcmMQm0JI?usp=sharing',
     codeUrl: 'https://github.com/Farras8/King_Culinary_App.git',
-    rank: 'A-Rank',
     completionDate: '2024-07-11',
   }
 ];

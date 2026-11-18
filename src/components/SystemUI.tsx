@@ -6,6 +6,7 @@ import {
   Download,
   Github,
   Linkedin,
+  Code2,
 } from "lucide-react";
 import { projects, type ProjectData } from "../Data/ProjectData";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
@@ -101,7 +102,8 @@ function TypingRole() {
     <p className="hero-role typing-role">
       <span className="role-static">{roles[0]}</span>
       <span className="role-animated" aria-hidden="true">
-        {text}<span className="typing-cursor" />
+        {text}
+        <span className="typing-cursor" />
       </span>
     </p>
   );
@@ -187,8 +189,8 @@ export function Home() {
 }
 const featuredIds = [
   "finance-form-system-010",
-  "dsimfoniku-009",
-  "jobmate-001",
+  "palm-fund-manager-011",
+  "dsmart-013",
 ];
 function ProjectReveal({
   children,
@@ -211,6 +213,22 @@ function ProjectReveal({
   );
 }
 
+export function ProjectOverview({ project }: { project: ProjectData }) {
+  return (
+    <div className="project-overview">
+      <Code2 size={32} aria-hidden="true" />
+      <span className="eyebrow">PROJECT OVERVIEW</span>
+      <p>{project.title.replace(/^Project:\s*/, "")}</p>
+      <small>{project.subtitle}</small>
+      <div className="tech-tags">
+        {project.technologies.slice(0, 3).map((tech) => (
+          <span key={tech}>{tech}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({
   p,
   large = false,
@@ -226,22 +244,28 @@ function ProjectCard({
         to={`/projects/${encodeURIComponent(p.id)}`}
         aria-label={`View ${name}`}
       >
-        <img
-          src={
-            ["Finance1.png", "Dsimfoniku1.jpeg", "JobMate1.png"].some((file) =>
-              p.images[0]?.endsWith(file),
-            )
-              ? "/optimized/" +
-                p.images[0]
-                  .split("/")
-                  .pop()
-                  ?.replace(/\.[^.]+$/, ".webp")
-              : p.images[0]
-          }
-          alt={`${name} preview`}
-          loading="lazy"
-        />
-        <span>{large ? "FEATURED PROJECT / 01" : "SELECTED WORK"}</span>
+        {p.images.length ? (
+          <img
+            src={
+              ["Finance1.png", "Dsimfoniku1.jpeg", "JobMate1.png"].some(
+                (file) => p.images[0]?.endsWith(file),
+              )
+                ? "/optimized/" +
+                  p.images[0]
+                    .split("/")
+                    .pop()
+                    ?.replace(/\.[^.]+$/, ".webp")
+                : p.images[0]
+            }
+            alt={`${name} preview`}
+            loading="lazy"
+          />
+        ) : (
+          <ProjectOverview project={p} />
+        )}
+        {p.images.length > 0 && (
+          <span>{large ? "FEATURED PROJECT / 01" : "SELECTED WORK"}</span>
+        )}
       </Link>
       <div className="work-body">
         <span className="eyebrow">{p.client}</span>
@@ -249,11 +273,18 @@ function ProjectCard({
           <h3>{name}</h3>
           <span className="status-badge">{p.status}</span>
         </div>
-        <p>{p.description}</p>
-        <div className="contribution">
-          <span>MY CONTRIBUTION</span>
-          <p>{p.myJobDesk[0]}</p>
-        </div>
+        {p.role && (
+          <span className="role-badge" aria-label={`My role: ${p.role}`}>
+            {p.role
+              .replace(
+                "Backend Developer with Frontend Support",
+                "Backend \u00b7 Frontend Support",
+              )
+              .replace("Full-Stack Developer", "Full-Stack")
+              .replace(" Developer", "")}
+          </span>
+        )}
+        <p className="work-summary">{p.description}</p>
         <div className="tech-tags">
           {p.technologies.slice(0, 4).map((t) => (
             <span key={t}>{t}</span>

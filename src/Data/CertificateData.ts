@@ -1,5 +1,31 @@
 export const allCertificates = [
   {
+    name: 'Certified Associate Data Scientist (CADS) - BNSP',
+    yearAchieve: 'Sep 2025',
+    yearEnd: 'Sep 2028',
+    previewImage: '/certificates/cads.webp',
+    credentialId: 'ID: 62015 2120 6 0035544 2025',
+    url: 'https://drive.google.com/drive/folders/1Q-dK5sgZFvCPLc5hOujVGDMU9JYQB2Vr?usp=sharing',
+  },
+  {
+    name: 'Finalist - Hackathon 9.0, TechnoScape 2026',
+    yearAchieve: 'Jun 2026',
+    previewImage: '/certificates/hackathon.webp',
+    url: 'https://drive.google.com/drive/folders/1LvAQ58B598tazw3Ulg-JhfjgGY-zQuQ2?usp=sharing',
+  },
+  {
+    name: 'Finalist - Software Development, IT Festival 2025 (IPB University)',
+    yearAchieve: 'Aug 2025',
+    previewImage: '/certificates/ipb.webp',
+    url: 'https://drive.google.com/drive/folders/1uBqSn9Y9IwoC5mQemwzW_YKfj1I0TOnx?usp=sharing',
+  },
+  {
+    name: 'Participant - TIC 8.0 National Website Development Competition (Universitas Jember)',
+    yearAchieve: 'Aug 2025',
+    previewImage: '/certificates/universitas-jember.webp',
+    url: 'https://drive.google.com/drive/folders/1hVh8bQGBLTDWevVEB60-PtBwNTnd7V97?usp=sharing',
+  },
+  {
     name: 'Associate Cloud Engineer Certification',
     yearAchieve: 'Mei 2025',
     yearEnd: 'Mei 2028',
